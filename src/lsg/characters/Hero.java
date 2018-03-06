@@ -1,4 +1,4 @@
-package characters;
+package lsg.characters;
 
 /**
  * @author antoinelemarie
@@ -55,30 +55,25 @@ public class Hero {
 	
 	public Hero(){
 		name = "Ynovator";
-		heroLife = 0;
-		maxLife = 0;
-		stamina = 0;
-		maxStamina = 0;
+		heroLife = 100;
+		maxLife = 1000;
+		stamina = 50;
+		maxStamina = 5000;
 		this.setName(name);
 	}
 	
 	
 	public Hero(String name, int heroLife, int stamina) {
-		if (name == null) {
-			name = "Ynovator";
-		}
-		this.setName(name);
-		this.setHeroLife(heroLife);
-		this.setStamina(stamina);
-		
-	}
-	
-	public String printStats(String name, int heroLife, int stamina) {
-		return this.toString();
+		this();
+		this.name= name;
+		this.heroLife = heroLife;
+		this.stamina = stamina;
 		
 	}
 	public boolean isAlive() {
+		
 		boolean alive = true;
+		
 		if (heroLife == 0) {
 			alive = false;
 		}else {
@@ -98,6 +93,12 @@ public class Hero {
 		}
 		return var;
 	}
+	
+	public String printStats() {
+		return this.toString();
+		
+	}
+	
 	
 	
 }
