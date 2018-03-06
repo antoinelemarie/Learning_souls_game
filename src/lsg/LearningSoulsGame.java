@@ -2,6 +2,7 @@ package lsg;
 
 import lsg.characters.Hero;
 import lsg.characters.Monster;
+import lsg.characters.Pnj;
 
 /**
  * @author antoinelemarie
@@ -13,7 +14,7 @@ public class LearningSoulsGame {
 	public static void main(String[] args) {
 		
 		
-		Hero hero = new Hero("bobby", 200, 30);
+		Hero hero = new Hero( 200, 30);
 		System.out.println(hero.printStats());
 		
 		Monster monster1 = new Monster();
@@ -30,6 +31,9 @@ public class LearningSoulsGame {
 		
 		Monster etudiator = new Monster("etudiator");
 		System.out.println(etudiator.printStats());
+		
+		Pnj bobby = new Pnj("Bobbyyyy!");
+		System.out.println(bobby.printStats());
 		
 		
 		
