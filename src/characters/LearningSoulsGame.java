@@ -1,4 +1,4 @@
-
+package characters;
 
 /**
  * @author antoinelemarie

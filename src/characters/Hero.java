@@ -1,6 +1,4 @@
-/**
- * 
- */
+package characters;
 
 /**
  * @author antoinelemarie
@@ -55,14 +53,14 @@ public class Hero {
 		this.maxLife = maxLife;
 	}
 	
-	public void hero(){
+	public void Hero(){
 		
 		name = "Ynovator";
 		this.setName(name);
 	}
 	
 	
-	public void hero(String name, int life, int stamina) {
+	public void Hero(String name, int life, int stamina) {
 		if (name == null) {
 			name = "Ynovator";
 		}
@@ -80,20 +78,22 @@ public class Hero {
 	@Override
 	public String toString() {
 		String var = "";
-		if(isAlive() == true) {
+		if(alive == true) {
 			var = "[Hero] \t" + name + "\t life=" + life + "\t stamina=" + stamina+"\t (Alive)";
 		}
-		if(isAlive() == false) {
+		if(alive == false) {
 			var = "[Hero] \t" + name + "\t life=" + life + "\t stamina=" + stamina+"\t (Dead)";
 		}
 		return var;
 	}
 	
 	public boolean isAlive() {
+		boolean alive = true;
 		if (life == 0) {
-			return false;
+			alive = false;
 		}else {
-			return true;
+			alive = true;
 		}
+		return alive;
 	}
 }
