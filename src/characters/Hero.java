@@ -6,10 +6,10 @@ package characters;
  */
 public class Hero {
 	private String name = null;
-	private int heroLife = 0;
-	private Integer maxLife = 0;
-	private int stamina = 0;
-	private Integer maxStamina = 0;
+	private int heroLife;
+	private Integer maxLife;
+	private int stamina;
+	private Integer maxStamina;
 	
 	
 
@@ -53,14 +53,17 @@ public class Hero {
 		this.maxLife = maxLife;
 	}
 	
-	public void Hero(){
-		
+	public Hero(){
 		name = "Ynovator";
+		heroLife = 0;
+		maxLife = 0;
+		stamina = 0;
+		maxStamina = 0;
 		this.setName(name);
 	}
 	
 	
-	public void Hero(String name, int heroLife, int stamina) {
+	public Hero(String name, int heroLife, int stamina) {
 		if (name == null) {
 			name = "Ynovator";
 		}

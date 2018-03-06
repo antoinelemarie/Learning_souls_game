@@ -3,7 +3,9 @@ package characters;
 public class Monster {
 	private String name = null;
 	private int monsterLife = 0;
-	private int strength = 0;
+	private int monsterStamina = 0;
+	private int i = 0;
+	
 	protected String getName() {
 		return name;
 	}
@@ -16,12 +18,23 @@ public class Monster {
 	protected void setMonsterLife(int monsterLife) {
 		this.monsterLife = monsterLife;
 	}
-	protected int getStrength() {
-		return strength;
+	protected int getMonsterStamina() {
+		return monsterStamina;
 	}
-	protected void setStrength(int strength) {
-		this.strength = strength;
+	protected void setMonsterStamina(int monsterStamina) {
+		this.monsterStamina = monsterStamina;
 	}
 	
+	public Monster() {
+		
+		name = "monstre_"+i;
+		
+	}
+	
+	public Monster(String name, int monsterLife, int monsterStamina) {
+		this.name = name;
+		monsterLife = 0;
+		monsterStamina = 0;
+	}
 	
 }
