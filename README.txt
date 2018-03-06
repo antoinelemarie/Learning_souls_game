@@ -1,0 +1,3 @@
+6.2) La visibilité optimale pour le a fonction isAlive() est friendly dans cette configuration, car c'est la visibilité la plus sécurisé tout en gardant la fonction accesible dans le main.
+
+7.3) A l'inverse de la configuration précédente, étant donné que le main et la fonction isAlive() ne sont pas dans le même package, on dois modifier la visibilité de isAlive à protected pour que le main puisse toujours l'appeler.
