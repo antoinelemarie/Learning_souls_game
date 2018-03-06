@@ -64,10 +64,10 @@ public class Characters {
 	public String toString() {
 		String var = "";
 		if(isAlive() == true) {
-			var = "["+this.getClass().getSimpleName()+"] \t" + name + "\t life = " + life + "\t stamina = " + stamina+"\t (Alive)";
+			var =String.format("["+this.getClass().getSimpleName()+"] %-20s life = %-20d stamina = %-20d (Alive)", name,life,stamina);
 		}
 		if(isAlive() == false) {
-			var = "["+this.getClass().getSimpleName()+"] \t" + name + "\t life = " + life + "\t stamina = " + stamina+"\t (Dead)";
+			var = String.format("["+this.getClass().getSimpleName()+"] %-20s life = %-20s stamina = %-20s (Dead)", name,life,stamina);
 		}
 		return var;
 	}
