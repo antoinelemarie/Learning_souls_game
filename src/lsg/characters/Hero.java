@@ -2,7 +2,9 @@ package lsg.characters;
 
 /**
  * @author antoinelemarie
- *
+ * 
+ * Création de héros hérité de la class Characters
+ * 
  */
 public class Hero extends Characters{
 	

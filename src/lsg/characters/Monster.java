@@ -3,7 +3,12 @@ package lsg.characters;
 public class Monster extends Characters{
 	
 	private static int instances_count = 0;
-	
+	/**
+	 * @author antoinelemarie
+	 * 
+	 * Création de monstres hérité de la class Characters
+	 * 
+	 */
 		
 	public Monster() {
 		instances_count+=1;

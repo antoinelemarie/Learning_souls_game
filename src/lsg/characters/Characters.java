@@ -7,7 +7,14 @@ public class Characters {
 	protected int stamina;
 	protected Integer maxStamina;
 	protected Integer maxLife;
-	
+	/**
+	 * @author antoinelemarie
+	 * 
+	 * Class Characters permet d'initialiser n'importe quel type de personnage.
+	 * 
+	 * @return
+	 * 
+	 */
 	protected Integer getMaxStamina() {
 		return maxStamina;
 	}
@@ -64,10 +71,10 @@ public class Characters {
 	public String toString() {
 		String var = "";
 		if(isAlive() == true) {
-			var =String.format("["+this.getClass().getSimpleName()+"] %-20s life = %-20d stamina = %-20d (Alive)", name,life,stamina);
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20d (Alive)", name,life,stamina);
 		}
 		if(isAlive() == false) {
-			var = String.format("["+this.getClass().getSimpleName()+"] %-20s life = %-20s stamina = %-20s (Dead)", name,life,stamina);
+			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20s stamina = %-20s (Dead)", name,life,stamina);
 		}
 		return var;
 	}

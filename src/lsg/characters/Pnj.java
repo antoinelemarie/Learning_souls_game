@@ -1,7 +1,12 @@
 package lsg.characters;
 
 public class Pnj extends Characters{
-	
+	/**
+	 * @author antoinelemarie
+	 * 
+	 * Création de PNJ hérité de la class Characters
+	 * 
+	 */
 	
 	public Pnj(){
 		name = "Ynovator";

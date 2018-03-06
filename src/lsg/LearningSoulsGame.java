@@ -6,6 +6,8 @@ import lsg.characters.Pnj;
 
 /**
  * @author antoinelemarie
+ * 
+ * Class Main
  *
  */
 public class LearningSoulsGame {
