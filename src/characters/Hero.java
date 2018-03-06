@@ -6,7 +6,7 @@ package characters;
  */
 public class Hero {
 	private String name = null;
-	private int life = 0;
+	private int heroLife = 0;
 	private Integer maxLife = 0;
 	private int stamina = 0;
 	private Integer maxStamina = 0;
@@ -37,12 +37,12 @@ public class Hero {
 		this.name = name;
 	}
 
-	protected int getLife() {
-		return life;
+	protected int getHeroLife() {
+		return heroLife;
 	}
 
-	protected void setLife(int life) {
-		this.life = life;
+	protected void setHeroLife(int heroLife) {
+		this.heroLife = heroLife;
 	}
 
 	protected Integer getMaxLife() {
@@ -60,40 +60,41 @@ public class Hero {
 	}
 	
 	
-	public void Hero(String name, int life, int stamina) {
+	public void Hero(String name, int heroLife, int stamina) {
 		if (name == null) {
 			name = "Ynovator";
 		}
 		this.setName(name);
-		this.setLife(life);
+		this.setHeroLife(heroLife);
 		this.setStamina(stamina);
 		
 	}
 	
-	public String printStats(String name, int life, int stamina) {
+	public String printStats(String name, int heroLife, int stamina) {
 		return this.toString();
 		
 	}
-
-	@Override
-	public String toString() {
-		String var = "";
-		if(alive == true) {
-			var = "[Hero] \t" + name + "\t life=" + life + "\t stamina=" + stamina+"\t (Alive)";
-		}
-		if(alive == false) {
-			var = "[Hero] \t" + name + "\t life=" + life + "\t stamina=" + stamina+"\t (Dead)";
-		}
-		return var;
-	}
-	
 	public boolean isAlive() {
 		boolean alive = true;
-		if (life == 0) {
+		if (heroLife == 0) {
 			alive = false;
 		}else {
 			alive = true;
 		}
 		return alive;
 	}
+
+	@Override
+	public String toString() {
+		String var = "";
+		if(isAlive() == true) {
+			var = "[Hero] \t" + name + "\t life=" + heroLife + "\t stamina=" + stamina+"\t (Alive)";
+		}
+		if(isAlive() == false) {
+			var = "[Hero] \t" + name + "\t life=" + heroLife + "\t stamina=" + stamina+"\t (Dead)";
+		}
+		return var;
+	}
+	
+	
 }
