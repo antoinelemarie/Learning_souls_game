@@ -77,4 +77,5 @@ public class Dice {
 		return minVal;
 	}
 	
+	
 }
