@@ -18,8 +18,6 @@ public class LearningSoulsGame {
 	
 	public static void main(String[] args) {
 		
-		
-		
 		Hero hero = new Hero( 200, 30);
 		System.out.println(hero.printStats());
 		
