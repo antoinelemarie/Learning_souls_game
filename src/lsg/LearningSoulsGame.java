@@ -6,6 +6,8 @@ import lsg.characters.Hero;
 import lsg.characters.Monster;
 import lsg.characters.Pnj;
 import lsg.helpers.Dice;
+import lsg.weapons.Sword;
+import lsg.weapons.Weapon;
 
 /**
  * @author antoinelemarie
@@ -39,6 +41,13 @@ public class LearningSoulsGame {
 		Pnj bobby = new Pnj("Bobbyyyy!");
 		System.out.println(bobby.printStats());
 		
+		Weapon wooden_staff = new Weapon();
+		System.out.println(wooden_staff.printStats());
+		
+		Sword sword = new Sword();
+		System.out.println(sword.printStats());
+		
+		
 		Dice d = new Dice(50, 500);
 		
 		ArrayList<Integer> al = new ArrayList<Integer>();
@@ -51,6 +60,7 @@ public class LearningSoulsGame {
 		
 		System.out.println("\nmin = " + Dice.min(al));
 		System.out.println("max = " + Dice.max(al));
+		
 		
 	}
 
