@@ -24,15 +24,36 @@ public class Axes extends Weapons {
 		this.name = name;
 		this.durability = durability;
 	}
+	
+	/**
+	 * @constructor
+	 */
+	public Axes(int stamCost, int durability, int maxDurability) {
+		this();
+		this.stamCost = stamCost;
+		this.durability = durability;
+		this.maxDurability = maxDurability;
+	}
+	
+	/**
+	 * @constructor
+	 */
+	public Axes(String name, int stamCost, int durability, int maxDurability) {
+		this();
+		this.name = name;
+		this.stamCost = stamCost;
+		this.durability = durability;
+		this.maxDurability = maxDurability;
+	}
 	/**
 	 * @constructor
 	 */
 	public Axes( int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
-		this.minDamage = minDamage;
-		this.maxDamage = maxDamage;
 		this.stamCost = stamCost;
 		this.durability = durability;
+		this.maxDamage = maxDamage;
+		this.minDamage = minDamage;
 	}
 	/**
 	 * @constructor
@@ -40,9 +61,9 @@ public class Axes extends Weapons {
 	public Axes(String name, int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
 		this.name = name;
-		this.minDamage = minDamage;
-		this.maxDamage = maxDamage;
 		this.stamCost = stamCost;
 		this.durability = durability;
+		this.maxDamage = maxDamage;
+		this.minDamage = minDamage;
 	}
 }

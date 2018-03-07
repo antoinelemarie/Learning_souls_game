@@ -61,6 +61,10 @@ public class Dice {
 		return random.nextInt(faces);
 	}
 	
+	public static int roll(int faces) {
+		return random.nextInt(faces);
+	}
+	
 	public static int min(ArrayList<Integer> al) {
 		for(int i = 0; i < al.size(); i++){
 	         if(al.get(i) < maxVal)

@@ -6,10 +6,24 @@ public class Weapons {
 	protected int maxDamage;
 	protected int stamCost;
 	protected static int durability;
+	protected int maxDurability;
+	
+
+
 	/**
 	 * Getters & Setter
 	 * @param durability
 	 */
+	
+	public int getMaxDurability() {
+		return maxDurability;
+	}
+
+
+	protected void setMaxDurability(int maxDurability) {
+		this.maxDurability = maxDurability;
+	}
+	
 	private void setDurability(int durability) {
 		this.durability = durability;
 	}
@@ -43,19 +57,39 @@ public class Weapons {
 	 * default @constructor
 	 */
 	public Weapons() {
-		name = "Generic Weapon";
+		name = "Wooden branch";
 		minDamage = 1;
 		maxDamage = 3;
 		stamCost = 2;
 		durability = 50;
+		maxDurability = 50;
 	}
-	/**
-	 * @constructor
-	 */
+	
 	public Weapons(String name, int durability) {
 		this();
 		this.name = name;
 		this.durability = durability;
+	}
+	
+	/**
+	 * @constructor
+	 */
+	public Weapons(int stamCost, int durability, int maxDurability) {
+		this();
+		this.stamCost = stamCost;
+		this.durability = durability;
+		this.maxDurability = maxDurability;
+	}
+	
+	/**
+	 * @constructor
+	 */
+	public Weapons(String name, int stamCost, int durability, int maxDurability) {
+		this();
+		this.name = name;
+		this.stamCost = stamCost;
+		this.durability = durability;
+		this.maxDurability = maxDurability;
 	}
 	/**
 	 * @constructor
@@ -102,10 +136,10 @@ public class Weapons {
 	public String toString() {
 		String var = "";
 		if(isBroken() == false) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-16d stamina cost = %-15d durability = %-20d (usable)", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability() );
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-16d stamina cost = %-15d durability = %-20d max durability = %-20d (usable)\n", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability(), this.getMaxDurability() );
 		}
 		if(isBroken() == true) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-16d stamina cost = %-15d durability = %-20d (broken)", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability() );
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-16d stamina cost = %-15d durability = %-20d max durability = %-20d (broken)\n", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability(), this.getMaxDurability() );
 		}
 		return var;
 	}

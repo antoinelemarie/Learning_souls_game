@@ -1,6 +1,7 @@
 package lsg.characters;
 
 import lsg.helpers.Dice;
+import lsg.weapons.Weapons;
 
 public class Characters {
 	
@@ -10,7 +11,7 @@ public class Characters {
 	protected Integer maxStamina;
 	protected Integer maxLife;
 	public static int money;
-	public Dice precision = new Dice(101);
+	public static Dice precision;
 	/**
 	 * @author antoinelemarie
 	 * 
@@ -70,15 +71,16 @@ public class Characters {
 		}
 		return alive;
 	}
+	
 
 	@Override
 	public String toString() {
 		String var = "";
 		if(isAlive() == true) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20d money = %-20s (Alive)", name,life,stamina,money);
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20d money = %-20s (Alive)\n", name,life,stamina,money);
 		}
 		if(isAlive() == false) {
-			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20s stamina = %-20s money = %-20s (Dead)", name,life,stamina,money);
+			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20s stamina = %-20s money = %-20s (Dead)\n", name,life,stamina,money);
 		}
 		return var;
 	}
@@ -97,6 +99,47 @@ public class Characters {
 		stamina = 25;
 		maxStamina = 500;
 		this.setName(name);
+	}
+	
+	
+	public double Attackwith(Weapons arme) {
+		precision = new Dice(101);
+		double rand;
+		int currentStamina = this.getStamina();
+		double attack = (arme.getMaxDamage()-arme.getMinDamage());
+		
+		if(arme.isBroken()) {
+			rand = 0;
+		}else if(arme.getDurability() <  (arme.getMaxDurability()/2)) {
+			rand = this.precision.roll()/2;
+		}else{
+			rand=this.precision.roll();
+		}
+		
+		if(currentStamina < 1) {
+			attack = 0;
+			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+			arme.use();
+			this.setStamina(currentStamina-arme.getStamCost());
+			return attack;
+		}else if(arme.getStamCost() > currentStamina) {
+			attack = attack*(currentStamina/arme.getStamCost());
+		}
+		
+		attack = attack *(rand);
+		attack = attack/100;
+		attack = Math.round(attack);
+		attack = attack + arme.getMinDamage();
+		this.setStamina(currentStamina-arme.getStamCost());
+		
+		arme.use();
+		System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+		
+		
+		
+		
+		return attack;
+		
 	}
 	
 }
