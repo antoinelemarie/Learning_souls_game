@@ -68,6 +68,9 @@ public class Weapons {
 		maxDurability = 50;
 	}
 	
+	/**
+	 * default @constructor
+	 */
 	public Weapons(String name, int durability) {
 		this();
 		this.name = name;
@@ -94,6 +97,7 @@ public class Weapons {
 		this.durability = durability;
 		this.maxDurability = maxDurability;
 	}
+	
 	/**
 	 * @constructor
 	 */
@@ -104,6 +108,7 @@ public class Weapons {
 		this.stamCost = stamCost;
 		this.durability = durability;
 	}
+	
 	/**
 	 * @constructor
 	 */
@@ -115,13 +120,15 @@ public class Weapons {
 		this.stamCost = stamCost;
 		this.durability = durability;
 	}
-	/**
+	
+	/*
 	 * Methode -1 en durabilite
 	 */
 	public void use(){
 		this.setDurability(this.durability-1);
 	}
-	/**
+	
+	/*
 	 * Verifie si l'arme est brisee
 	 * @return boolean si l'arme a 0 ou moins en durabilite
 	 */

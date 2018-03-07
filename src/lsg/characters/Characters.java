@@ -69,7 +69,20 @@ public class Characters {
 			this.stamina = 0;
 		}
 	}
-	
+	/**
+	 * default @constructor
+	 */
+	protected Characters() {
+		name = "Random Character";
+		life = 25;
+		maxLife = 100;
+		stamina = 25;
+		maxStamina = 500;
+		this.setName(name);
+	}
+	/*
+	 * methode pour voir si le personnage est en vie
+	 */
 	public boolean isAlive() {
 		
 		boolean alive = true;
@@ -101,19 +114,11 @@ public class Characters {
 		return this.toString();
 		
 	}
-	/**
-	 * default @constructor
+	
+	
+	/*
+	 * methode d'attaque avec une arme
 	 */
-	protected Characters() {
-		name = "Random Character";
-		life = 25;
-		maxLife = 100;
-		stamina = 25;
-		maxStamina = 500;
-		this.setName(name);
-	}
-	
-	
 	public double Attackwith(Weapons arme) {
 		precision = new Dice(101);
 		double rand;
@@ -121,7 +126,9 @@ public class Characters {
 		double attack = (arme.getMaxDamage()-arme.getMinDamage());
 		
 		
-		
+		/*
+		 * Calcule de la durabilité de l'arme
+		 */
 		if(arme.isBroken()) {
 			attack = 0;
 			arme.use();
@@ -140,6 +147,9 @@ public class Characters {
 		attack = attack *(rand);
 		attack = attack/100;
 		
+		/*
+		 * Calcule de la stamina du personnage
+		 */
 		if(currentStamina < 1) {
 			
 			attack = 0;
