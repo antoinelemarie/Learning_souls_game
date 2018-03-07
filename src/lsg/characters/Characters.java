@@ -1,5 +1,7 @@
 package lsg.characters;
 
+import lsg.helpers.Dice;
+
 public class Characters {
 	
 	protected String name = null;
@@ -7,6 +9,7 @@ public class Characters {
 	protected int stamina;
 	protected Integer maxStamina;
 	protected Integer maxLife;
+	public Dice precision = new Dice(101,1);
 	/**
 	 * @author antoinelemarie
 	 * 

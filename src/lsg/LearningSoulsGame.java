@@ -73,6 +73,9 @@ public class LearningSoulsGame {
 		System.out.println("\nmin = " + Dice.min(al));
 		System.out.println("max = " + Dice.max(al));
 		
+		Hero Az = new Hero( 200, 30);
+		System.out.println(Az.precision.roll());
+		
 		
 	}
 
