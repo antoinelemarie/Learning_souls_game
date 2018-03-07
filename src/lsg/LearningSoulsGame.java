@@ -1,8 +1,11 @@
 package lsg;
 
+import java.util.ArrayList;
+
 import lsg.characters.Hero;
 import lsg.characters.Monster;
 import lsg.characters.Pnj;
+import lsg.helpers.Dice;
 
 /**
  * @author antoinelemarie
@@ -14,6 +17,7 @@ public class LearningSoulsGame {
 
 	
 	public static void main(String[] args) {
+		
 		
 		
 		Hero hero = new Hero( 200, 30);
@@ -37,7 +41,18 @@ public class LearningSoulsGame {
 		Pnj bobby = new Pnj("Bobbyyyy!");
 		System.out.println(bobby.printStats());
 		
+		Dice d = new Dice(50, 500);
 		
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		for (int i = 0; i < d.getNblancer(); i++) {
+			int lance = Dice.roll();
+			System.out.print(lance+" ");
+			al.add(lance);
+			
+		};
+		
+		System.out.println("\nmin = " + Dice.min(al));
+		System.out.println("max = " + Dice.max(al));
 		
 	}
 
