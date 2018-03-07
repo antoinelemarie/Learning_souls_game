@@ -179,9 +179,6 @@ public class Characters {
 		arme.use();
 		System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 		
-		
-		
-		
 		return attack;
 		
 	}
