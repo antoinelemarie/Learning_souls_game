@@ -10,7 +10,7 @@ public class Characters {
 	protected Integer maxStamina;
 	protected Integer maxLife;
 	public int money;
-	public Dice precision = new Dice(101,1);
+	public Dice precision = new Dice(101);
 	/**
 	 * @author antoinelemarie
 	 * 
