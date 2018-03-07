@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import lsg.characters.Hero;
 import lsg.characters.Monsters;
 import lsg.characters.Pnjs;
+import lsg.characters.Sellers;
 import lsg.helpers.Dice;
 import lsg.weapons.Axes;
 import lsg.weapons.Mass;
@@ -35,7 +36,7 @@ public class LearningSoulsGame {
 		Monsters monster3 = new Monsters(0,10);
 		System.out.println(monster3.printStats());
 		
-		Monsters boss = new Monsters("boss", 30, 29);
+		Monsters boss = new Monsters("boss", 30, 40);
 		System.out.println(boss.printStats());
 		
 		Monsters etudiator = new Monsters("etudiator");
@@ -43,6 +44,9 @@ public class LearningSoulsGame {
 		
 		Pnjs bobby = new Pnjs("Bobbyyyy!");
 		System.out.println(bobby.printStats());
+		
+		Sellers marchand = new Sellers("Marchand");
+		System.out.println(marchand.printStats());
 		
 		Weapons wooden_staff = new Weapons();
 		System.out.println(wooden_staff.printStats());
@@ -73,8 +77,8 @@ public class LearningSoulsGame {
 		System.out.println("\nmin = " + Dice.min(al));
 		System.out.println("max = " + Dice.max(al));
 		
-		Hero Az = new Hero( 200, 30);
-		System.out.println(Az.precision.roll());
+		
+		System.out.println(hero.precision.roll());
 		
 		
 	}

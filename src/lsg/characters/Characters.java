@@ -9,7 +9,7 @@ public class Characters {
 	protected int stamina;
 	protected Integer maxStamina;
 	protected Integer maxLife;
-	public int money;
+	public static int money;
 	public Dice precision = new Dice(101);
 	/**
 	 * @author antoinelemarie
@@ -75,10 +75,10 @@ public class Characters {
 	public String toString() {
 		String var = "";
 		if(isAlive() == true) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20d (Alive)", name,life,stamina);
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20d money = %-20s (Alive)", name,life,stamina,money);
 		}
 		if(isAlive() == false) {
-			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20s stamina = %-20s (Dead)", name,life,stamina);
+			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20s stamina = %-20s money = %-20s (Dead)", name,life,stamina,money);
 		}
 		return var;
 	}
