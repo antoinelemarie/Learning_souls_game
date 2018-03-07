@@ -25,7 +25,7 @@ public class LearningSoulsGame {
 	
 	public static void main(String[] args) {
 		
-		Hero hero = new Hero( 200, 30);
+		Hero hero = new Hero( 200, 220);
 		System.out.println(hero.printStats());
 		
 //		Monsters monster1 = new Monsters();
@@ -52,7 +52,7 @@ public class LearningSoulsGame {
 //		Weapons wooden_staff = new Weapons();
 //		System.out.println(wooden_staff.printStats());
 //		
-		Swords sword = new Swords(70, 100, 210);
+		Swords sword = new Swords(60, 210, 210);
 		System.out.println(sword.printStats());
 //		
 //		Spears spear = new Spears();
@@ -66,6 +66,10 @@ public class LearningSoulsGame {
 		
 		
 		
+		
+		hero.Attackwith(sword);
+		
+		System.out.println(hero.printStats());
 		
 		hero.Attackwith(sword);
 		

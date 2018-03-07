@@ -26,6 +26,9 @@ public class Weapons {
 	
 	private void setDurability(int durability) {
 		this.durability = durability;
+		if(durability < 1) {
+			this.durability = 0;
+		}
 	}
 
 
@@ -143,6 +146,7 @@ public class Weapons {
 		}
 		return var;
 	}
+	
 	public String printStats() {
 		return this.toString();
 		

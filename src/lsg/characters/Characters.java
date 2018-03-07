@@ -7,10 +7,10 @@ public class Characters {
 	
 	protected String name = null;
 	protected int life;
-	protected int stamina;
+	protected double stamina;
 	protected Integer maxStamina;
 	protected Integer maxLife;
-	public static int money;
+	public int money;
 	public static Dice precision;
 	/**
 	 * @author antoinelemarie
@@ -20,6 +20,13 @@ public class Characters {
 	 * @return
 	 * 
 	 */
+	protected int getMoney() {
+		return money;
+	}
+
+	protected void setMoney(int money) {
+		this.money = money;
+	}
 	protected Integer getMaxStamina() {
 		return maxStamina;
 	}
@@ -52,12 +59,15 @@ public class Characters {
 		this.life = life;
 	}
 	
-	protected int getStamina() {
+	protected double getStamina() {
 		return stamina;
 	}
 
-	protected void setStamina(int stamina) {
+	protected void setStamina(double stamina) {
 		this.stamina = stamina;
+		if(stamina < 1) {
+			this.stamina = 0;
+		}
 	}
 	
 	public boolean isAlive() {
@@ -77,14 +87,16 @@ public class Characters {
 	public String toString() {
 		String var = "";
 		if(isAlive() == true) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20d money = %-20s (Alive)\n", name,life,stamina,money);
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20s money = %-20d (Alive)\n", this.getName(),this.getLife(),this.getStamina(),this.getMoney());
 		}
 		if(isAlive() == false) {
-			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20s stamina = %-20s money = %-20s (Dead)\n", name,life,stamina,money);
+			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20s money = %-20d (Dead)\n", this.getName(),this.getLife(),this.getStamina(),this.getMoney());
 		}
 		return var;
 	}
 	
+	
+
 	public String printStats() {
 		return this.toString();
 		
@@ -105,33 +117,55 @@ public class Characters {
 	public double Attackwith(Weapons arme) {
 		precision = new Dice(101);
 		double rand;
-		int currentStamina = this.getStamina();
+		double currentStamina = this.getStamina();
 		double attack = (arme.getMaxDamage()-arme.getMinDamage());
 		
+		
+		
 		if(arme.isBroken()) {
-			rand = 0;
+			attack = 0;
+			arme.use();
+			this.setStamina(currentStamina-arme.getStamCost());
+			
+			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+			
+			return attack;
 		}else if(arme.getDurability() <  (arme.getMaxDurability()/2)) {
 			rand = this.precision.roll()/2;
 		}else{
 			rand=this.precision.roll();
-		}
-		
-		if(currentStamina < 1) {
-			attack = 0;
-			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
-			arme.use();
-			this.setStamina(currentStamina-arme.getStamCost());
-			return attack;
-		}else if(arme.getStamCost() > currentStamina) {
-			attack = attack*(currentStamina/arme.getStamCost());
+			
 		}
 		
 		attack = attack *(rand);
 		attack = attack/100;
+		
+		if(currentStamina < 1) {
+			
+			attack = 0;
+			arme.use();
+			this.setStamina(currentStamina-arme.getStamCost());
+			
+			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+			
+			return attack;
+			
+		}else if(arme.getStamCost() > currentStamina) {
+			
+			attack = attack + arme.getMinDamage();
+			attack = attack*(currentStamina/arme.getStamCost());
+			attack = Math.round(attack);
+			arme.use();
+			this.setStamina(currentStamina-arme.getStamCost());
+			
+			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+			
+			return attack;
+		}
+		
 		attack = Math.round(attack);
 		attack = attack + arme.getMinDamage();
 		this.setStamina(currentStamina-arme.getStamCost());
-		
 		arme.use();
 		System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 		
