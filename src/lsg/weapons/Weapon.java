@@ -89,7 +89,7 @@ public class Weapon {
 	 * @return boolean si l'arme a 0 ou moins en durabilite
 	 */
 	public boolean isBroken() {
-		if (getDurability()<1) {
+		if (this.getDurability()<1) {
 			return true;
 		}
 		else {
@@ -101,11 +101,11 @@ public class Weapon {
 	@Override
 	public String toString() {
 		String var = "";
-		if(isBroken() == true) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-20d stamina cost = %-20d durability = %-20d (usable)", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability() );
-		}
 		if(isBroken() == false) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-17d stamina cost = %-15d durability = %-20d (broken)", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability() );
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-16d stamina cost = %-15d durability = %-20d (usable)", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability() );
+		}
+		if(isBroken() == true) {
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s dégats = %d-%-16d stamina cost = %-15d durability = %-20d (broken)", this.getName(),this.getMinDamage(),this.getMaxDamage(),this.getStamCost(),this.getDurability() );
 		}
 		return var;
 	}

@@ -6,6 +6,9 @@ import lsg.characters.Hero;
 import lsg.characters.Monster;
 import lsg.characters.Pnj;
 import lsg.helpers.Dice;
+import lsg.weapons.Axe;
+import lsg.weapons.Mass;
+import lsg.weapons.Spear;
 import lsg.weapons.Sword;
 import lsg.weapons.Weapon;
 
@@ -46,6 +49,15 @@ public class LearningSoulsGame {
 		
 		Sword sword = new Sword();
 		System.out.println(sword.printStats());
+		
+		Spear spear = new Spear();
+		System.out.println(spear.printStats());
+		
+		Axe axe = new Axe();
+		System.out.println(axe.printStats());
+		
+		Mass mass = new Mass();
+		System.out.println(mass.printStats());
 		
 		
 		Dice d = new Dice(50, 500);
