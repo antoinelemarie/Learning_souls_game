@@ -8,8 +8,8 @@ public class Dice {
 	static int faces;
 	static Random random = new Random();
 	static int nblancer;
-	static int maxVal = Integer.MAX_VALUE;
-    static int minVal = Integer.MIN_VALUE;
+	static Integer maxVal = Integer.MAX_VALUE;
+    static Integer minVal = Integer.MIN_VALUE;
 	
 	public Random getRandom() {
 		return random;
@@ -47,20 +47,18 @@ public class Dice {
 		return random.nextInt(faces);
 	}
 	
-	public static int max(ArrayList<Integer> al) {
-		Integer[] array = (Integer[]) al.toArray();
-		for(int i = 0; i < array.length; i++){
-	         if(array[i] < maxVal)
-	           maxVal = array[i];
+	public static int min(ArrayList<Integer> al) {
+		for(int i = 0; i < al.size(); i++){
+	         if(al.get(i) < maxVal)
+	           maxVal = al.get(i);
 	       }
 		return maxVal;
 	}
 	
-	public static int min(ArrayList<Integer> al) {
-		Integer[] array = (Integer[]) al.toArray();
-		for(int i = 0; i < array.length; i++){
-	         if(array[i] > minVal)
-	           minVal = array[i];
+	public static int max(ArrayList<Integer> al) {
+		for(int i = 0; i < al.size(); i++){
+	         if(al.get(i) > minVal)
+	           minVal = al.get(i);
 	       }
 		return minVal;
 	}
