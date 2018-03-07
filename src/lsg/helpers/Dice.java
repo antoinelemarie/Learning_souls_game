@@ -36,8 +36,17 @@ public class Dice {
 	 */
 	public Dice(){
 		faces = 6;
+		nblancer = 1;
 		
 	}
+	/**
+	 * @constructor
+	 */
+	public Dice(int faces){
+		this();
+		this.faces = faces;
+	}
+	
 	/**
 	 * @constructor
 	 */
