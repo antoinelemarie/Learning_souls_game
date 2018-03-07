@@ -16,18 +16,28 @@ public class Hero extends Characters{
 		maxStamina = 5000;
 		this.setName(name);
 	}
-	
+	/**
+	 * default @constructor
+	 */
 	public Hero(String name) {
 		this();
 		this.name= name;
 		
 	}
+	/**
+	 * @constructor
+	 * life et stamina
+	 */
 	public Hero( int life, int stamina) {
 		this();
 		this.life = life;
 		this.stamina = stamina;
 		
 	}
+	/**
+	 * @constructor
+	 * nom, life et stamina
+	 */
 	public Hero(String name, int life, int stamina) {
 		this();
 		this.name= name;

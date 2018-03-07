@@ -17,18 +17,28 @@ public class Monster extends Characters{
 		stamina = 10;
 		
 	}
-	
+	/**
+	 * default @constructor
+	 */
 	public Monster(String name) {
 		this();
 		this.name = name;
 		
 	}
+	/**
+	 * @constructor
+	 * life et stamina
+	 */
 	public Monster(int monsterLife, int monsterStamina) {
 		this();
 		
 		this.life = monsterLife;
 		this.stamina = monsterStamina;
 	}
+	/**
+	 * @constructor
+	 * nom, life et stamina
+	 */
 	public Monster(String name,int monsterLife, int monsterStamina) {
 		this();
 		this.name = name;

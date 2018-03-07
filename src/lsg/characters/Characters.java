@@ -83,7 +83,9 @@ public class Characters {
 		return this.toString();
 		
 	}
-	
+	/**
+	 * default @constructor
+	 */
 	protected Characters() {
 		name = "Random Character";
 		life = 25;

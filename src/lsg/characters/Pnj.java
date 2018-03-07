@@ -7,7 +7,9 @@ public class Pnj extends Characters{
 	 * Création de PNJ hérité de la class Characters
 	 * 
 	 */
-	
+	/**
+	 * default @constructor
+	 */
 	public Pnj(){
 		name = "Ynovator";
 		life = 50;
@@ -16,12 +18,17 @@ public class Pnj extends Characters{
 		maxStamina = 50000000;
 		this.setName(name);
 	}
-	
+	/**
+	 * @constructor
+	 */
 	public Pnj(String name) {
 		this();
 		this.name= name;
 		
 	}
+	/**
+	 * @constructor
+	 */
 	public Pnj(String name, int life, int stamina) {
 		this();
 		this.name= name;
