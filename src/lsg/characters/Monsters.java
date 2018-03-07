@@ -1,6 +1,6 @@
 package lsg.characters;
 
-public class Monster extends Characters{
+public class Monsters extends Characters{
 	
 	private static int instances_count = 0;
 	/**
@@ -10,7 +10,7 @@ public class Monster extends Characters{
 	 * 
 	 */
 		
-	public Monster() {
+	public Monsters() {
 		instances_count+=1;
 		name = "monstre_"+instances_count;
 		life = 10;
@@ -20,7 +20,7 @@ public class Monster extends Characters{
 	/**
 	 * default @constructor
 	 */
-	public Monster(String name) {
+	public Monsters(String name) {
 		this();
 		this.name = name;
 		
@@ -29,7 +29,7 @@ public class Monster extends Characters{
 	 * @constructor
 	 * life et stamina
 	 */
-	public Monster(int monsterLife, int monsterStamina) {
+	public Monsters(int monsterLife, int monsterStamina) {
 		this();
 		
 		this.life = monsterLife;
@@ -39,7 +39,7 @@ public class Monster extends Characters{
 	 * @constructor
 	 * nom, life et stamina
 	 */
-	public Monster(String name,int monsterLife, int monsterStamina) {
+	public Monsters(String name,int monsterLife, int monsterStamina) {
 		this();
 		this.name = name;
 		this.life = monsterLife;

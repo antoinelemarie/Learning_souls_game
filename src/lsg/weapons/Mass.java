@@ -5,7 +5,7 @@ package lsg.weapons;
  * @author antoinelemarie
  *
  */
-public class Mass extends Weapon {
+public class Mass extends Weapons {
 	/**
 	 * default @constructor
 	 */

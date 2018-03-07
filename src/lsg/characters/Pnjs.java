@@ -1,6 +1,6 @@
 package lsg.characters;
 
-public class Pnj extends Characters{
+public class Pnjs extends Characters{
 	/**
 	 * @author antoinelemarie
 	 * 
@@ -10,7 +10,7 @@ public class Pnj extends Characters{
 	/**
 	 * default @constructor
 	 */
-	public Pnj(){
+	public Pnjs(){
 		name = "Ynovator";
 		life = 50;
 		maxLife = 100000000;
@@ -21,7 +21,7 @@ public class Pnj extends Characters{
 	/**
 	 * @constructor
 	 */
-	public Pnj(String name) {
+	public Pnjs(String name) {
 		this();
 		this.name= name;
 		
@@ -29,7 +29,7 @@ public class Pnj extends Characters{
 	/**
 	 * @constructor
 	 */
-	public Pnj(String name, int life, int stamina) {
+	public Pnjs(String name, int life, int stamina) {
 		this();
 		this.name= name;
 		this.life = life;

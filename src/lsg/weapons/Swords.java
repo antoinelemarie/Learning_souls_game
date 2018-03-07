@@ -5,21 +5,21 @@ package lsg.weapons;
  * @author antoinelemarie
  *
  */
-public class Spear extends Weapon {
+public class Swords extends Weapons {
 	/**
 	 * default @constructor
 	 */
-	public Spear() {
-		name = "Basic Spear";
+	public Swords() {
+		name = "Basic Sword";
 		minDamage = 5;
 		maxDamage = 10;
-		stamCost = 3;
+		stamCost = 2;
 		durability = 100;
 	}
 	/**
 	 * @constructor
 	 */
-	public Spear(String name, int durability) {
+	public Swords(String name, int durability) {
 		this();
 		this.name = name;
 		this.durability = durability;
@@ -27,7 +27,7 @@ public class Spear extends Weapon {
 	/**
 	 * @constructor
 	 */
-	public Spear( int minDamage, int maxDamage, int stamCost, int durability) {
+	public Swords( int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
 		this.minDamage = minDamage;
 		this.maxDamage = maxDamage;
@@ -37,7 +37,7 @@ public class Spear extends Weapon {
 	/**
 	 * @constructor
 	 */
-	public Spear(String name, int minDamage, int maxDamage, int stamCost, int durability) {
+	public Swords(String name, int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
 		this.name = name;
 		this.minDamage = minDamage;

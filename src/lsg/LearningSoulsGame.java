@@ -3,14 +3,14 @@ package lsg;
 import java.util.ArrayList;
 
 import lsg.characters.Hero;
-import lsg.characters.Monster;
-import lsg.characters.Pnj;
+import lsg.characters.Monsters;
+import lsg.characters.Pnjs;
 import lsg.helpers.Dice;
-import lsg.weapons.Axe;
+import lsg.weapons.Axes;
 import lsg.weapons.Mass;
-import lsg.weapons.Spear;
-import lsg.weapons.Sword;
-import lsg.weapons.Weapon;
+import lsg.weapons.Spears;
+import lsg.weapons.Swords;
+import lsg.weapons.Weapons;
 
 /**
  * @author antoinelemarie
@@ -26,34 +26,34 @@ public class LearningSoulsGame {
 		Hero hero = new Hero( 200, 30);
 		System.out.println(hero.printStats());
 		
-		Monster monster1 = new Monster();
+		Monsters monster1 = new Monsters();
 		System.out.println(monster1.printStats());
 		
-		Monster monster2 = new Monster();
+		Monsters monster2 = new Monsters();
 		System.out.println(monster2.printStats());
 		
-		Monster monster3 = new Monster(0,10);
+		Monsters monster3 = new Monsters(0,10);
 		System.out.println(monster3.printStats());
 		
-		Monster boss = new Monster("boss", 30, 29);
+		Monsters boss = new Monsters("boss", 30, 29);
 		System.out.println(boss.printStats());
 		
-		Monster etudiator = new Monster("etudiator");
+		Monsters etudiator = new Monsters("etudiator");
 		System.out.println(etudiator.printStats());
 		
-		Pnj bobby = new Pnj("Bobbyyyy!");
+		Pnjs bobby = new Pnjs("Bobbyyyy!");
 		System.out.println(bobby.printStats());
 		
-		Weapon wooden_staff = new Weapon();
+		Weapons wooden_staff = new Weapons();
 		System.out.println(wooden_staff.printStats());
 		
-		Sword sword = new Sword();
+		Swords sword = new Swords();
 		System.out.println(sword.printStats());
 		
-		Spear spear = new Spear();
+		Spears spear = new Spears();
 		System.out.println(spear.printStats());
 		
-		Axe axe = new Axe();
+		Axes axe = new Axes();
 		System.out.println(axe.printStats());
 		
 		Mass mass = new Mass();

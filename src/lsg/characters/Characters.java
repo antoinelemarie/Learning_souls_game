@@ -9,6 +9,7 @@ public class Characters {
 	protected int stamina;
 	protected Integer maxStamina;
 	protected Integer maxLife;
+	public int money;
 	public Dice precision = new Dice(101,1);
 	/**
 	 * @author antoinelemarie

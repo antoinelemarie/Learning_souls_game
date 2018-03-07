@@ -1,6 +1,6 @@
 package lsg.weapons;
 
-public class Weapon {
+public class Weapons {
 	protected String name;
 	protected int minDamage;
 	protected int maxDamage;
@@ -42,7 +42,7 @@ public class Weapon {
 	/**
 	 * default @constructor
 	 */
-	public Weapon() {
+	public Weapons() {
 		name = "Generic Weapon";
 		minDamage = 1;
 		maxDamage = 3;
@@ -52,7 +52,7 @@ public class Weapon {
 	/**
 	 * @constructor
 	 */
-	public Weapon(String name, int durability) {
+	public Weapons(String name, int durability) {
 		this();
 		this.name = name;
 		this.durability = durability;
@@ -60,7 +60,7 @@ public class Weapon {
 	/**
 	 * @constructor
 	 */
-	public Weapon( int minDamage, int maxDamage, int stamCost, int durability) {
+	public Weapons( int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
 		this.minDamage = minDamage;
 		this.maxDamage = maxDamage;
@@ -70,7 +70,7 @@ public class Weapon {
 	/**
 	 * @constructor
 	 */
-	public Weapon(String name, int minDamage, int maxDamage, int stamCost, int durability) {
+	public Weapons(String name, int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
 		this.name = name;
 		this.minDamage = minDamage;
