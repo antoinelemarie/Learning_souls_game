@@ -9,6 +9,7 @@ import lsg.characters.Pnjs;
 import lsg.characters.Sellers;
 import lsg.helpers.Dice;
 import lsg.weapons.Axes;
+import lsg.weapons.BasicWeapons;
 import lsg.weapons.Mass;
 import lsg.weapons.Spears;
 import lsg.weapons.Swords;
@@ -28,8 +29,8 @@ public class LearningSoulsGame {
 		Hero hero = new Hero( 200, 220);
 		System.out.println(hero.printStats());
 		
-//		Monsters monster1 = new Monsters();
-//		System.out.println(monster1.printStats());
+		Monsters monster1 = new Monsters(100, 200);
+		System.out.println(monster1.printStats());
 //		
 //		Monsters monster2 = new Monsters();
 //		System.out.println(monster2.printStats());
@@ -53,7 +54,8 @@ public class LearningSoulsGame {
 //		System.out.println(wooden_staff.printStats());
 //		
 		Swords sword = new Swords(60, 210, 210);
-		System.out.println(sword.printStats());
+		
+		BasicWeapons branch = new BasicWeapons();
 //		
 //		Spears spear = new Spears();
 //		System.out.println(spear.printStats());
@@ -64,29 +66,25 @@ public class LearningSoulsGame {
 //		Mass mass = new Mass();
 //		System.out.println(mass.printStats());
 		
+		hero.Attack(sword, monster1);
 		
+		System.out.println("1 "+monster1.printStats());
 		
+		monster1.Attack(branch, hero);
 		
-		hero.Attackwith(sword);
+		System.out.println("2 "+hero.printStats());
 		
-		System.out.println(hero.printStats());
+		hero.Attack(sword, monster1);
 		
-		hero.Attackwith(sword);
+		System.out.println("3 "+monster1.printStats());
 		
-		System.out.println(hero.printStats());
+		hero.Attack(sword, monster1);
 		
-		hero.Attackwith(sword);
+		System.out.println("4 "+monster1.printStats());
 		
-		System.out.println(hero.printStats());
+		monster1.Attack(branch, hero);
 		
-		hero.Attackwith(sword);
-		
-		System.out.println(hero.printStats());
-		
-		hero.Attackwith(sword);
-		
-		
-		
+		System.out.println("5 "+hero.printStats());
 		
 		
 	}

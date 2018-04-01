@@ -26,7 +26,7 @@ public class Weapons {
 	
 	private void setDurability(int durability) {
 		this.durability = durability;
-		if(durability < 1) {
+		if(durability < 0) {
 			this.durability = 0;
 		}
 	}
@@ -62,9 +62,9 @@ public class Weapons {
 	public Weapons() {
 		name = "Wooden branch";
 		minDamage = 1;
-		maxDamage = 3;
+		maxDamage = 5;
 		stamCost = 2;
-		durability = 50;
+		durability = 3;
 		maxDurability = 50;
 	}
 	

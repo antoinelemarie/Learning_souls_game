@@ -10,6 +10,8 @@ public class Characters {
 	protected double stamina;
 	protected Integer maxStamina;
 	protected Integer maxLife;
+	protected Integer minAttack;
+	protected Integer maxAttack;
 	public int money;
 	public static Dice precision;
 	/**
@@ -20,6 +22,31 @@ public class Characters {
 	 * @return
 	 * 
 	 */
+	
+	protected Integer getMinAttack() {
+		return minAttack;
+	}
+
+	protected void setMinAttack(Integer minAttack) {
+		this.minAttack = minAttack;
+	}
+
+	protected Integer getMaxAttack() {
+		return maxAttack;
+	}
+
+	protected void setMaxAttack(Integer maxAttack) {
+		this.maxAttack = maxAttack;
+	}
+
+	protected static Dice getPrecision() {
+		return precision;
+	}
+
+	protected static void setPrecision(Dice precision) {
+		Characters.precision = precision;
+	}
+
 	protected int getMoney() {
 		return money;
 	}
@@ -57,6 +84,9 @@ public class Characters {
 
 	protected void setLife(int life) {
 		this.life = life;
+		if(life < 0) {
+			this.life = 0;
+		}
 	}
 	
 	protected double getStamina() {
@@ -65,7 +95,7 @@ public class Characters {
 
 	protected void setStamina(double stamina) {
 		this.stamina = stamina;
-		if(stamina < 1) {
+		if(stamina < 0) {
 			this.stamina = 0;
 		}
 	}
@@ -177,10 +207,20 @@ public class Characters {
 		attack = attack + arme.getMinDamage();
 		this.setStamina(currentStamina-arme.getStamCost());
 		arme.use();
-		System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+		System.out.println("Attaque avec ["+arme.printStats()/*.getClass().getSimpleName()*/+"] dommages causés => "+ attack);
 		
 		return attack;
 		
+	}
+	
+	public void Attack(Weapons character1Weapons, Characters character2) {
+		double character1Attack;
+		int character2Life = character2.getLife();
+		
+		character1Attack = this.Attackwith(character1Weapons);
+		
+		character2.setLife((int) (character2Life - character1Attack));
+
 	}
 	
 }
