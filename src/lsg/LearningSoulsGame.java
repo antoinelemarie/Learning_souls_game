@@ -54,8 +54,10 @@ public class LearningSoulsGame {
 //		System.out.println(wooden_staff.printStats());
 //		
 		Swords sword = new Swords(60, 210, 210);
+		System.out.println(sword.printStats());
 		
 		BasicWeapons branch = new BasicWeapons();
+		System.out.println(branch.printStats());
 //		
 //		Spears spear = new Spears();
 //		System.out.println(spear.printStats());

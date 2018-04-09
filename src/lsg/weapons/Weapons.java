@@ -5,7 +5,7 @@ public class Weapons {
 	protected int minDamage;
 	protected int maxDamage;
 	protected int stamCost;
-	protected static int durability;
+	protected int durability;
 	protected int maxDurability;
 	
 
