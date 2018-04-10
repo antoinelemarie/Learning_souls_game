@@ -15,7 +15,6 @@ import lsg.weapons.Mass;
 import lsg.weapons.Spears;
 import lsg.weapons.Swords;
 import lsg.weapons.Weapons;
-import util.Scanner;
 
 /**
  * @author antoinelemarie
@@ -26,7 +25,7 @@ import util.Scanner;
 public class LearningSoulsGame {
 	Hero hero;
 	Monsters monster;
-	Scanner scanner = new Scanner(System.in);
+	java.util.Scanner scanner = new java.util.Scanner(System.in);
 	
 	public static void main(String[] args) {
 		
@@ -64,5 +63,6 @@ public class LearningSoulsGame {
 	public void scanner(InputStream in) {
 		// TODO Auto-generated constructor stub
 	}
+	
 
 }
