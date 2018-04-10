@@ -51,30 +51,30 @@ public class LearningSoulsGame {
 		monster.setArme(claw);
 	}
 	
-	public void refresh(Hero Hero, Monsters monster) {
+	public void refresh(Hero hero, Monsters monster) {
 		
 		System.out.println("Tour Suivant");
-		System.out.println(Hero.printStats());
+		System.out.println(hero.printStats());
 		System.out.println(monster.printStats());
 		
 	}
 
 	
-	public String fight1v1(Hero Hero, Monsters monster) {
+	public String fight1v1(Hero hero, Monsters monster) {
 		int dmg=0;
-		refresh(Hero, monster);
-		while (!(Hero.getLife()==0||monster.getLife()==0)) {
+		refresh(hero, monster);
+		while (!(hero.getLife()==0||monster.getLife()==0)) {
 			
 			// scan de la touche ici String nextline()
-			dmg = (int) Hero.Attack();
+			dmg = (int) hero.Attack();
 			monster.setLife(monster.getLife() - dmg);
 			
 			dmg = (int) monster.Attack();
-			Hero.setLife(Hero.getLife() - dmg);
-			refresh(Hero, monster);
+			hero.setLife(hero.getLife() - dmg);
+			refresh(hero, monster);
 		}
 		
-		String strWin = Hero.getLife()==0 ? "Monster" : "Hero";
+		String strWin = hero.getLife()==0 ? "Monster" : "Hero";
 		return strWin+" Wins ! Fatality !";
 		
 	}
