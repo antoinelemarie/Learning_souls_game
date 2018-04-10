@@ -1,5 +1,6 @@
 package lsg;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import lsg.characters.Characters;
@@ -56,28 +57,12 @@ public class LearningSoulsGame {
 		
 		//System.out.println("2 "+hero.printStats());
 		
-		hero.Attack();
-		
-		//System.out.println("3 "+monster1.printStats());
-		
-		hero.Attack();
-		
-		//System.out.println("4 "+monster1.printStats());
-		
-		monster1.Attack();
-		
-		//System.out.println("5 "+hero.printStats());
-		
-		hero.Attack();
-		
-		//System.out.println("5 "+hero.printStats());
-
-		hero.Attack();
-		
-		//System.out.println("5 "+hero.printStats());
 		
 		
-		
+	}
+	
+	public void scanner(InputStream in) {
+		// TODO Auto-generated constructor stub
 	}
 
 }
