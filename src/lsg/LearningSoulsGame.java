@@ -66,6 +66,7 @@ public class LearningSoulsGame {
 		while (!(hero.getLife()==0||monster.getLife()==0)) {
 			
 			// scan de la touche ici String nextline()
+			scanner.nextLine();
 			dmg = (int) hero.Attack();
 			monster.setLife(monster.getLife() - dmg);
 			
