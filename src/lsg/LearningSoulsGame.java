@@ -36,6 +36,7 @@ public static void refresh(Hero Hero, Monsters monster) {
 		System.out.println(monster.printStats());
 		
 	}
+
 	
 	public static String fight1v1(Hero Hero, Monsters monster) {
 		int dmg=0;
