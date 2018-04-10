@@ -8,9 +8,9 @@ import lsg.weapons.Weapons;
  * Création de héros hérité de la class Characters
  * 
  */
-public class Hero extends Characters{
+public class Heros extends Characters{
 	
-	public Hero(){
+	public Heros(){
 		name = "Ynovator";
 		life = 100;
 		maxLife = 1000;
@@ -21,7 +21,7 @@ public class Hero extends Characters{
 	/**
 	 * default @constructor
 	 */
-	public Hero(String name) {
+	public Heros(String name) {
 		this();
 		this.name= name;
 		
@@ -30,7 +30,7 @@ public class Hero extends Characters{
 	 * @constructor
 	 * life et stamina
 	 */
-	public Hero( int life, int stamina) {
+	public Heros( int life, int stamina) {
 		this();
 		this.life = life;
 		this.stamina = stamina;
@@ -40,7 +40,7 @@ public class Hero extends Characters{
 	 * @constructor
 	 * nom, life et stamina
 	 */
-	public Hero(String name, int life, int stamina) {
+	public Heros(String name, int life, int stamina) {
 		this();
 		this.name= name;
 		this.life = life;

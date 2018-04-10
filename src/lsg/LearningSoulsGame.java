@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.*;
 
 import lsg.characters.Characters;
-import lsg.characters.Hero;
+import lsg.characters.Heros;
 import lsg.characters.Monsters;
 import lsg.characters.Pnjs;
 import lsg.characters.Sellers;
 import lsg.helpers.Dice;
 import lsg.weapons.Axes;
 import lsg.weapons.BasicWeapons;
-import lsg.weapons.Claw;
+import lsg.weapons.Claws;
 import lsg.weapons.Mass;
 import lsg.weapons.Spears;
 import lsg.weapons.Swords;
@@ -25,10 +25,10 @@ import lsg.weapons.Weapons;
  *
  */
 public class LearningSoulsGame {
-	private Hero hero;
+	private Heros hero;
 	private Monsters monster;
 	private Swords sword;
-	private Claw claw;
+	private Claws claw;
 	Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) {
@@ -42,16 +42,16 @@ public class LearningSoulsGame {
 	}
 	
 	public void init() {
-		hero = new Hero( 200, 220);
+		hero = new Heros( 200, 220);
 		sword = new Swords( 10, 20, 2, 210);
 		hero.setArme(sword);
 		
 		monster = new Monsters(100, 200);
-		claw = new Claw(15, 30, 2, 210);
+		claw = new Claws(15, 30, 2, 210);
 		monster.setArme(claw);
 	}
 	
-	public void refresh(Hero hero, Monsters monster) {
+	public void refresh(Heros hero, Monsters monster) {
 		
 		System.out.println("Tour Suivant");
 		System.out.println(hero.printStats());
@@ -60,7 +60,7 @@ public class LearningSoulsGame {
 	}
 
 	
-	public String fight1v1(Hero hero, Monsters monster) {
+	public String fight1v1(Heros hero, Monsters monster) {
 		int dmg=0;
 		refresh(hero, monster);
 		while (!(hero.getLife()==0||monster.getLife()==0)) {

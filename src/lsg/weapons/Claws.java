@@ -7,12 +7,12 @@ package lsg.weapons;
  * @author antoinelemarie
  *
  */
-public class Claw extends Weapons {
+public class Claws extends Weapons {
 
 	/**
 	 * 
 	 */
-	public Claw() {
+	public Claws() {
 		super();
 		
 			name = "claw";
@@ -27,7 +27,7 @@ public class Claw extends Weapons {
 	/**
 	 * @constructor
 	 */
-	public Claw(String name, int durability) {
+	public Claws(String name, int durability) {
 		this();
 		this.name = name;
 		this.durability = durability;
@@ -36,7 +36,7 @@ public class Claw extends Weapons {
 	/**
 	 * @constructor
 	 */
-	public Claw(int stamCost, int durability, int maxDurability) {
+	public Claws(int stamCost, int durability, int maxDurability) {
 		this();
 		this.stamCost = stamCost;
 		this.durability = durability;
@@ -46,7 +46,7 @@ public class Claw extends Weapons {
 	/**
 	 * @constructor
 	 */
-	public Claw(String name, int stamCost, int durability, int maxDurability) {
+	public Claws(String name, int stamCost, int durability, int maxDurability) {
 		this();
 		this.name = name;
 		this.stamCost = stamCost;
@@ -56,7 +56,7 @@ public class Claw extends Weapons {
 	/**
 	 * @constructor
 	 */
-	public Claw( int minDamage, int maxDamage, int stamCost, int durability) {
+	public Claws( int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
 		this.stamCost = stamCost;
 		this.durability = durability;
@@ -66,7 +66,7 @@ public class Claw extends Weapons {
 	/**
 	 * @constructor
 	 */
-	public Claw(String name, int minDamage, int maxDamage, int stamCost, int durability) {
+	public Claws(String name, int minDamage, int maxDamage, int stamCost, int durability) {
 		this();
 		this.name = name;
 		this.stamCost = stamCost;
