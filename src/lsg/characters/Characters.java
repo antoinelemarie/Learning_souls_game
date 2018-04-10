@@ -166,14 +166,14 @@ public class Characters {
 		
 		
 		/*
-		 * Calcule de la durabilité de l'arme
+		 * Calcul de la durabilité de l'arme
 		 */
 		if(arme.isBroken()) {
 			attack = 0;
 			arme.use();
 			this.setStamina(currentStamina-arme.getStamCost());
 			
-			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+			System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 			
 			return attack;
 		}else if(arme.getDurability() <  (arme.getMaxDurability()/2)) {
@@ -195,7 +195,7 @@ public class Characters {
 			arme.use();
 			this.setStamina(currentStamina-arme.getStamCost());
 			
-			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+			System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 			
 			return attack;
 			
@@ -207,7 +207,7 @@ public class Characters {
 			arme.use();
 			this.setStamina(currentStamina-arme.getStamCost());
 			
-			System.out.println("Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
+			System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 			
 			return attack;
 		}
@@ -216,7 +216,7 @@ public class Characters {
 		attack = attack + arme.getMinDamage();
 		this.setStamina(currentStamina-arme.getStamCost());
 		arme.use();
-		System.out.println("Attaque avec ["+arme.printStats()/*.getClass().getSimpleName()*/+"] dommages causés => "+ attack);
+		System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()/*.getClass().getSimpleName()*/+"] dommages causés => "+ attack);
 		
 		return attack;
 		

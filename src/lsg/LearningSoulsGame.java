@@ -12,6 +12,7 @@ import lsg.characters.Sellers;
 import lsg.helpers.Dice;
 import lsg.weapons.Axes;
 import lsg.weapons.BasicWeapons;
+import lsg.weapons.Claw;
 import lsg.weapons.Mass;
 import lsg.weapons.Spears;
 import lsg.weapons.Swords;
@@ -24,12 +25,33 @@ import lsg.weapons.Weapons;
  *
  */
 public class LearningSoulsGame {
-	static Hero hero;
-	static Monsters monster;
+	private Hero hero;
+	private Monsters monster;
+	private Swords sword;
+	private Claw claw;
 	Scanner scanner = new Scanner(System.in);
 	
+	public static void main(String[] args) {
+		LearningSoulsGame lsg = new LearningSoulsGame();
+		lsg.play_v1();
+	}
 	
-public static void refresh(Hero Hero, Monsters monster) {
+	public void play_v1() {
+		init();
+		System.out.println(fight1v1(hero, monster));
+	}
+	
+	public void init() {
+		hero = new Hero( 200, 220);
+		sword = new Swords( 10, 20, 2, 210);
+		hero.setArme(sword);
+		
+		monster = new Monsters(100, 200);
+		claw = new Claw(15, 30, 2, 210);
+		monster.setArme(claw);
+	}
+	
+	public void refresh(Hero Hero, Monsters monster) {
 		
 		System.out.println("Tour Suivant");
 		System.out.println(Hero.printStats());
@@ -37,54 +59,22 @@ public static void refresh(Hero Hero, Monsters monster) {
 		
 	}
 	
-	public static String fight1v1(Hero Hero, Monsters monster) {
+	public String fight1v1(Hero Hero, Monsters monster) {
 		int dmg=0;
-		/*while (!(Hero.getLife()==0||monster.getLife()==0)) {*/
-			refresh(Hero, monster);
+		refresh(Hero, monster);
+		while (!(Hero.getLife()==0||monster.getLife()==0)) {
+			
 			// scan de la touche ici String nextline()
-			System.out.println("test");
 			dmg = (int) Hero.Attack();
 			monster.setLife(monster.getLife() - dmg);
-		/*}*/
-			return "Wins";
+			
+			dmg = (int) monster.Attack();
+			Hero.setLife(Hero.getLife() - dmg);
+			refresh(Hero, monster);
+		}
 		
-	}
-	
-	public static void main(String[] args) {
-		
-		
-		
-		Hero hero = new Hero( 200, 220);
-		Swords sword = new Swords(2, 210, 210);
-		hero.setArme(sword);
-		
-		Monsters monster1 = new Monsters(100, 200);
-		Swords sword1 = new Swords(2, 210, 210);
-		monster.setArme(sword1);
-		
-		fight1v1(hero, monster1);
-		
-		/*
-		Swords new_sword = new Swords("Gilbert Berangeru nasty sauce du granu jnounu de trois semainu de feu", 999999999, 999999999, 999999999);
-		System.out.println(new_sword.printStats());
-
-		Swords sword = new Swords(60, 210, 210);
-		//System.out.println(sword.printStats());
-		
-		Swords branch = new Swords();
-		//System.out.println(branch.printStats());;
-		
-		hero.setArme(sword);
-		monster1.setArme(branch);
-		
-		hero.Attack();
-		
-		//System.out.println("1 "+monster1.printStats());
-		
-		monster1.Attack();
-		
-		//System.out.println("2 "+hero.printStats());
-		*/
+		String strWin = Hero.getLife()==0 ? "Monster" : "Hero";
+		return strWin+" Wins ! Fatality !";
 		
 	}
 	
