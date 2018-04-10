@@ -239,11 +239,12 @@ public class Characters {
 	}
 	
 	public int GetHitWith(int value) {
-		int degats = 0;
+		
+		int degats =0;
 		int characterLife = this.getLife();
 		
 		
-		this.setLife(characterLife - degats);
+		degats = (int) ((value >= characterLife)? degats = characterLife : value);
 		
 		return degats;
 	}
