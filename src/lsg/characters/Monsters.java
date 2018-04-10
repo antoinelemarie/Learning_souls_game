@@ -2,7 +2,15 @@ package lsg.characters;
 
 public class Monsters extends Characters{
 	
+	int skinThickness = 20;
 	private static int instances_count = 0;
+	
+	public int getSkinThickness() {
+		return skinThickness;
+	}
+	public void setSkinThickness(int skinThickness) {
+		this.skinThickness = skinThickness;
+	}
 	/**
 	 * @author antoinelemarie
 	 * 

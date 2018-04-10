@@ -9,6 +9,7 @@ import lsg.characters.Heros;
 import lsg.characters.Monsters;
 import lsg.characters.Pnjs;
 import lsg.characters.Sellers;
+import lsg.equipements.Armors;
 import lsg.helpers.Dice;
 import lsg.weapons.Axes;
 import lsg.weapons.BasicWeapons;
@@ -29,12 +30,11 @@ public class LearningSoulsGame {
 	private Monsters monster;
 	private Swords sword;
 	private Claws claw;
-	Scanner scanner = new Scanner(System.in);
+	static Armors blackWitchVeil;
+	static Armors dragonSlayerLeggings;
+	static Armors ringedKnightArmor;
 	
-	public static void main(String[] args) {
-		LearningSoulsGame lsg = new LearningSoulsGame();
-		lsg.play_v1();
-	}
+	Scanner scanner = new Scanner(System.in);
 	
 	public void play_v1() {
 		init();
@@ -49,6 +49,12 @@ public class LearningSoulsGame {
 		monster = new Monsters(100, 200);
 		claw = new Claws(15, 30, 2, 210);
 		monster.setArme(claw);
+		
+		blackWitchVeil = new Armors("BlackWitchVeil", (float) 4.6);
+		dragonSlayerLeggings = new Armors("DragonSlayerLeggings", (float) 10.2);
+		ringedKnightArmor = new Armors("RingedKnightArmor", (float) 14.99);
+		
+		
 	}
 	
 	public void refresh(Heros hero, Monsters monster) {
@@ -79,6 +85,19 @@ public class LearningSoulsGame {
 		return strWin+" Wins ! Fatality !";
 		
 	}
+	
+	
+	public static void main(String[] args) {
+		LearningSoulsGame lsg = new LearningSoulsGame();
+		//lsg.play_v1();
+		lsg.init();
+		
+		System.out.println(blackWitchVeil.printStats());
+		System.out.println(dragonSlayerLeggings.printStats());
+		System.out.println(ringedKnightArmor.printStats());
+	}
+	
+	
 	
 
 }

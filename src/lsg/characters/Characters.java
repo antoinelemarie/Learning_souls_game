@@ -12,7 +12,7 @@ public class Characters {
 	protected Integer maxLife;
 	protected Integer minAttack;
 	protected Integer maxAttack;
-	public int money;
+	protected int money;
 	public static Dice precision;
 	public Weapons arme;
 	/**
