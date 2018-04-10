@@ -79,11 +79,11 @@ public class Characters {
 		this.name = name;
 	}
 
-	protected int getLife() {
+	public int getLife() {
 		return life;
 	}
 
-	protected void setLife(int life) {
+	public void setLife(int life) {
 		this.life = life;
 		if(life < 0) {
 			this.life = 0;

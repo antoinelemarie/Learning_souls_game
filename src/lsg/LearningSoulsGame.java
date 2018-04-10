@@ -29,21 +29,25 @@ public class LearningSoulsGame {
 	Scanner scanner = new Scanner(System.in);
 	
 	
-public static void refresh() {
+public static void refresh(Hero Hero, Monsters monster) {
 		
 		System.out.println("Tour Suivant");
-		System.out.println(hero.printStats());
+		System.out.println(Hero.printStats());
 		System.out.println(monster.printStats());
 		
 	}
 	
 	public static String fight1v1(Hero Hero, Monsters monster) {
+		int dmg=0;
+		/*while (!(Hero.getLife()==0||monster.getLife()==0)) {*/
+			refresh(Hero, monster);
+			// scan de la touche ici String nextline()
+			System.out.println("test");
+			dmg = (int) Hero.Attack();
+			monster.setLife(monster.getLife() - dmg);
+		/*}*/
+			return "Wins";
 		
-		refresh();
-		
-		
-		
-		return "Wins";
 	}
 	
 	public static void main(String[] args) {
@@ -51,11 +55,16 @@ public static void refresh() {
 		
 		
 		Hero hero = new Hero( 200, 220);
-		System.out.println(hero.printStats());
+		Swords sword = new Swords(2, 210, 210);
+		hero.setArme(sword);
 		
 		Monsters monster1 = new Monsters(100, 200);
-		System.out.println(monster1.printStats());
+		Swords sword1 = new Swords(2, 210, 210);
+		monster.setArme(sword1);
 		
+		fight1v1(hero, monster1);
+		
+		/*
 		Swords new_sword = new Swords("Gilbert Berangeru nasty sauce du granu jnounu de trois semainu de feu", 999999999, 999999999, 999999999);
 		System.out.println(new_sword.printStats());
 
@@ -75,7 +84,7 @@ public static void refresh() {
 		monster1.Attack();
 		
 		//System.out.println("2 "+hero.printStats());
-		
+		*/
 		
 	}
 	
