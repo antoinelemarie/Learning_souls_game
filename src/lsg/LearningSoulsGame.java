@@ -56,7 +56,7 @@ public class LearningSoulsGame {
 		Swords sword = new Swords(60, 210, 210);
 		System.out.println(sword.printStats());
 		
-		BasicWeapons branch = new BasicWeapons();
+		Swords branch = new Swords();
 		System.out.println(branch.printStats());
 //		
 //		Spears spear = new Spears();
@@ -68,25 +68,37 @@ public class LearningSoulsGame {
 //		Mass mass = new Mass();
 //		System.out.println(mass.printStats());
 		
-		hero.Attack(sword, monster1);
+		hero.setArme(sword);
+		monster1.setArme(branch);
+		
+		hero.Attack();
 		
 		System.out.println("1 "+monster1.printStats());
 		
-		monster1.Attack(branch, hero);
+		monster1.Attack();
 		
 		System.out.println("2 "+hero.printStats());
 		
-		hero.Attack(sword, monster1);
+		hero.Attack();
 		
 		System.out.println("3 "+monster1.printStats());
 		
-		hero.Attack(sword, monster1);
+		hero.Attack();
 		
 		System.out.println("4 "+monster1.printStats());
 		
-		monster1.Attack(branch, hero);
+		monster1.Attack();
 		
 		System.out.println("5 "+hero.printStats());
+		
+		hero.Attack();
+		
+		System.out.println("5 "+hero.printStats());
+
+		hero.Attack();
+		
+		System.out.println("5 "+hero.printStats());
+		
 		
 		
 	}

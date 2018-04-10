@@ -20,3 +20,7 @@
  Ce qui fais qu'avec un this.getClass().getSimpleName() on obtiens de le nom de la classe de l'objet courant.
 
  Il faudra passer les attributs de classe qui sont dans "Characters" de private à protected afin que les classe qui héritent de "Characters" (comme par exemple "Hero") puisse accéder à la variable lors de la création de l'objet.
+ 
+ 6) Si on instancie l'épée au deux personnages la durabilité est décrémenté à chaque tour car ils ont le meme objet.
+ 
+ 

@@ -1,5 +1,7 @@
 package lsg.characters;
 
+import lsg.weapons.Weapons;
+
 /**
  * @author antoinelemarie
  * 

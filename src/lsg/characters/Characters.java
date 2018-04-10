@@ -14,6 +14,7 @@ public class Characters {
 	protected Integer maxAttack;
 	public int money;
 	public static Dice precision;
+	public Weapons arme;
 	/**
 	 * @author antoinelemarie
 	 * 
@@ -99,6 +100,14 @@ public class Characters {
 			this.stamina = 0;
 		}
 	}
+	public Weapons getArme() {
+		return arme;
+	}
+
+	public void setArme(Weapons arme) {
+		this.arme = arme;
+	}
+
 	/**
 	 * default @constructor
 	 */
@@ -149,7 +158,7 @@ public class Characters {
 	/*
 	 * methode d'attaque avec une arme
 	 */
-	public double Attackwith(Weapons arme) {
+	private double Attackwith(Weapons arme) {
 		precision = new Dice(101);
 		double rand;
 		double currentStamina = this.getStamina();
@@ -213,14 +222,30 @@ public class Characters {
 		
 	}
 	
-	public void Attack(Weapons character1Weapons, Characters character2) {
-		double character1Attack;
-		int character2Life = character2.getLife();
+	public double Attack() {
+		double characterAttack;
 		
-		character1Attack = this.Attackwith(character1Weapons);
 		
-		character2.setLife((int) (character2Life - character1Attack));
+		if (this.isAlive()) {
+			characterAttack = this.Attackwith(this.getArme());
+		}else {
+			characterAttack = 0;
+		}
+		
+		
+		return characterAttack;
+		//character2.setLife((int) (character2Life - character1Attack));
 
+	}
+	
+	public int GetHitWith(int value) {
+		int degats = 0;
+		int characterLife = this.getLife();
+		
+		
+		this.setLife(characterLife - degats);
+		
+		return degats;
 	}
 	
 }
