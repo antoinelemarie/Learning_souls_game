@@ -50,9 +50,9 @@ public class LearningSoulsGame {
 		claw = new Claws(15, 30, 2, 210);
 		monster.setArme(claw);
 		
-		blackWitchVeil = new Armors("BlackWitchVeil", (float) 4.6);
-		dragonSlayerLeggings = new Armors("DragonSlayerLeggings", (float) 10.2);
-		ringedKnightArmor = new Armors("RingedKnightArmor", (float) 14.99);
+		blackWitchVeil = new Armors("BlackWitchVeil", 4.6f);
+		dragonSlayerLeggings = new Armors("DragonSlayerLeggings", 10.2f);
+		ringedKnightArmor = new Armors("RingedKnightArmor", 14.99f);
 		
 		
 	}

@@ -8,7 +8,7 @@ public class Equipements {
 	protected int maxDurability;
 	
 	
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 
@@ -18,7 +18,7 @@ public class Equipements {
 	}
 
 
-	protected float getArmorValue() {
+	public float getArmorValue() {
 		return armorValue;
 	}
 
@@ -28,7 +28,7 @@ public class Equipements {
 	}
 
 
-	protected int getDurability() {
+	public int getDurability() {
 		return durability;
 	}
 
@@ -38,7 +38,7 @@ public class Equipements {
 	}
 
 
-	protected int getMaxDurability() {
+	public int getMaxDurability() {
 		return maxDurability;
 	}
 
