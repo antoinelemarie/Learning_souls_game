@@ -2,10 +2,10 @@ package lsg.characters;
 
 public class Monsters extends Characters{
 	
-	int skinThickness = 20;
+	float skinThickness = 20;
 	private static int instances_count = 0;
 	
-	public int getSkinThickness() {
+	public float getSkinThickness() {
 		return skinThickness;
 	}
 	public void setSkinThickness(int skinThickness) {
@@ -44,6 +44,7 @@ public class Monsters extends Characters{
 		this.life = monsterLife;
 		this.stamina = monsterStamina;
 	}
+	
 	/**
 	 * @constructor
 	 * life, stamina, min attack et max attack
@@ -54,6 +55,19 @@ public class Monsters extends Characters{
 		this.stamina = monsterStamina;
 		this.minAttack = monsterMinAttack;
 		this.maxAttack = monsterMaxAttack;
+	}
+	
+	/**
+	 * @constructor
+	 * life, stamina, min attack, max attack et la peau du monstre (son armure)
+	 */
+	public Monsters(int monsterLife, int monsterStamina, int monsterMaxAttack, int monsterMinAttack, float skinTchickness) {
+		this();
+		this.life = monsterLife;
+		this.stamina = monsterStamina;
+		this.minAttack = monsterMinAttack;
+		this.maxAttack = monsterMaxAttack;
+		this.skinThickness = skinTchickness;
 	}
 	
 	/**
@@ -77,6 +91,26 @@ public class Monsters extends Characters{
 		this.stamina = monsterStamina;
 		this.minAttack = monsterMinAttack;
 		this.maxAttack = monsterMaxAttack;
+	}
+	
+	/**
+	 * @constructor
+	 * life, name, stamina, min attack, max attack et la peau du monstre (son armure)
+	 */
+	public Monsters(String name,int monsterLife, int monsterStamina, int monsterMaxAttack, int monsterMinAttack, float skinThickness) {
+		this();
+		this.name = name;
+		this.life = monsterLife;
+		this.stamina = monsterStamina;
+		this.minAttack = monsterMinAttack;
+		this.maxAttack = monsterMaxAttack;
+		this.skinThickness = skinThickness;
+	}
+	
+	@Override
+	public float computeProtection() {
+		// TODO Auto-generated method stub
+		return skinThickness;
 	}
 	
 	

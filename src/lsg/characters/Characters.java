@@ -1,9 +1,11 @@
 package lsg.characters;
 
+import java.util.Locale;
+
 import lsg.helpers.Dice;
 import lsg.weapons.Weapons;
 
-public class Characters {
+public abstract class Characters {
 	
 	protected String name = null;
 	protected int life;
@@ -139,10 +141,12 @@ public class Characters {
 	public String toString() {
 		String var = "";
 		if(isAlive() == true) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20s money = %-20d (Alive)\n", this.getName(),this.getLife(),this.getStamina(),this.getMoney());
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20s money "
+					+ "= %-20d protection = %-20f (Alive)\n", this.getName(),this.getLife(),this.getStamina(),this.getMoney(), this.computeProtection());
 		}
 		if(isAlive() == false) {
-			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20s money = %-20d (Dead)\n", this.getName(),this.getLife(),this.getStamina(),this.getMoney());
+			var = String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s life = %-20d stamina = %-20s money "
+					+ "= %-20d (Dead)\n", this.getName(),this.getLife(),this.getStamina(),this.getMoney());
 		}
 		return var;
 	}
@@ -238,15 +242,26 @@ public class Characters {
 
 	}
 	
-	public int GetHitWith(int value) {
+	public float GetHitWith(int value) {
 		
-		int degats =0;
-		int characterLife = this.getLife();
+		float protection = computeProtection();
+		float degats =0;
+		float characterLife = this.getLife();
 		
+		if (protection == 100) {
+			degats = 0;
+		}else {
+			degats = value*(protection/100);
+		}
+		degats = (int) ((value >= characterLife)? characterLife : value);
 		
-		degats = (int) ((value >= characterLife)? degats = characterLife : value);
+		degats = Math.round(degats);
+		characterLife = characterLife - degats;
+		this.setLife((int) characterLife);
 		
 		return degats;
 	}
+	
+	abstract public float computeProtection();
 	
 }

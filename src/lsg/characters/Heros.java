@@ -61,7 +61,7 @@ public class Heros extends Characters{
 		}else {
 			
 		armorEquiped[slot] = armor;
-		System.out.println("The piece of armor : " + armor + " has been equiped");
+		System.out.println("The piece of armor : " + armor.getName()+" de defense : "+ armor.getArmorValue() + " has been equiped");
 		return armorEquiped;
 		
 		}
@@ -71,14 +71,19 @@ public class Heros extends Characters{
 		float total = 0;
 
 		for (int i = 0; i < armorEquiped.length; i++) {
-			Armors temp = armorEquiped[i];
-			total += temp.getArmorValue();
+			if (armorEquiped[i] != null) {
+				Armors temp = armorEquiped[i];
+				total += temp.getArmorValue();
+			}else {
+				total += 0;
+			}
+			
 		}
 		
 		return total;
 	}
 	
-	public String armorToString() {
+	public void armorToString() {
 		
 		float total = this.getTotalArmor();
 		String var = "Armor : ";
@@ -87,16 +92,17 @@ public class Heros extends Characters{
 			
 			if (armorEquiped[i] == null) {
 				
-				var +=String.format("%-20d : empty",i+1);
+				var +=String.format("%10d : empty",i+1);
 				
 			}else {
 			
 				Armors temp = armorEquiped[i];
-				var +=String.format("%-20d : %s (%f)",i+1, temp.getName(),temp.getArmorValue());
+				var +=String.format("%10d : %s ( %f )",i+1, temp.getName(),temp.getArmorValue());
 			}
 		}
 		
-		return Arrays.toString(armorEquiped)+"\n TOTAL : "+total;
+//		return Arrays.toString(armorEquiped)+" TOTAL : "+total;
+		System.out.println(var+"     TOTAL : "+total);
 		
 	}
 	
@@ -127,10 +133,16 @@ public class Heros extends Characters{
 		
 		hero2.setArmorItem(blackWitchVeil, 1);
 		hero2.setArmorItem(dragonSlayerLeggings, 3);
-		hero2.setArmorItem(ringedKnightArmor, 2);
+//		hero2.setArmorItem(ringedKnightArmor, 2);
 		
 		hero2.armorToString();
 		
+	}
+	@Override
+	public float computeProtection() {
+		// TODO Auto-generated method stub
+		
+		return this.getTotalArmor();
 	}
 	
 }

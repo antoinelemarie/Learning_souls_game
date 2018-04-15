@@ -36,4 +36,9 @@ public class Pnjs extends Characters{
 		this.stamina = stamina;
 		
 	}
+	@Override
+	public float computeProtection() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

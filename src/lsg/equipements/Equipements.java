@@ -86,10 +86,10 @@ public class Equipements {
 	public String toString() {
 		String var = "";
 		if(isBroken() == false) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s( %f) (usable)\n", this.getName(),this.getArmorValue());
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s( %f) (usable)", this.getName(),this.getArmorValue());
 		}
 		if(isBroken() == true) {
-			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s( %f) (broken)\n", this.getName(),this.getArmorValue());
+			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s( %f) (broken)", this.getName(),this.getArmorValue());
 		}
 		return var;
 	}
