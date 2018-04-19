@@ -16,9 +16,9 @@ public class Claws extends Weapons {
 		super();
 		
 			name = "claw";
-			minDamage = 50;
-			maxDamage = 150;
-			stamCost = 5;
+			minDamage = 10;
+			maxDamage = 30;
+			stamCost = 2;
 			durability = 100;
 			maxDurability = 100;
 	
@@ -32,6 +32,16 @@ public class Claws extends Weapons {
 		this.name = name;
 		this.durability = durability;
 	}
+	
+	/**
+	 * @constructor
+	 */
+	public Claws(int minDamage, int maxDamage) {
+		this();
+		this.minDamage = minDamage;
+		this.maxDamage = maxDamage;
+	}
+	
 	
 	/**
 	 * @constructor

@@ -47,7 +47,7 @@ public class LearningSoulsGame {
 		hero.setArmorItem(blackWitchVeil, 1);
 		hero.setArmorItem(dragonSlayerLeggings, 3);
 		hero.setArmorItem(ringedKnightArmor, 2);
-		System.out.println(fight1v1(hero, monster));
+		fight1v1(hero, monster);
 	}
 	
 	public void init() {
@@ -84,6 +84,7 @@ public class LearningSoulsGame {
 			scanner.nextLine();
 			dmg = (int) hero.Attack();
 			monster.setLife(monster.getLife() - dmg);
+			System.out.println("try");
 			
 			dmg = (int) monster.Attack();
 			hero.setLife(hero.getLife() - dmg);
@@ -91,15 +92,18 @@ public class LearningSoulsGame {
 		}
 		
 		String strWin = hero.getLife()==0 ? "Monster" : "Hero";
-		return strWin+" Wins ! Fatality !";
+		strWin = strWin+" Wins ! Fatality !";
+		System.out.println(strWin);
+		return strWin = strWin+" Wins ! Fatality !";
 		
 	}
 	
 	
 	public static void main(String[] args) {
 		LearningSoulsGame lsg = new LearningSoulsGame();
-		lsg.play_v2();
+		
 		lsg.init();
+		lsg.play_v2();
 		
 //		System.out.println(blackWitchVeil.printStats());
 //		System.out.println(dragonSlayerLeggings.printStats());

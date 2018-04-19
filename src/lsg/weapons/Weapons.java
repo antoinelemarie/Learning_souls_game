@@ -23,37 +23,47 @@ public class Weapons {
 	protected void setMaxDurability(int maxDurability) {
 		this.maxDurability = maxDurability;
 	}
+	public String getName() {
+		return name;
+	}
+
+	public int getMinDamage() {
+		return minDamage;
+	}
+	
+	public void setMinDamage(int minDamage) {
+		this.minDamage = minDamage;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMaxDamage() {
+		return maxDamage;
+	}
+	
+	public void setMaxDamage(int maxDamage) {
+		this.maxDamage = maxDamage;
+	}
+
+	public int getStamCost() {
+		return stamCost;
+	}
+	
+	public void setStamCost(int stamCost) {
+		this.stamCost = stamCost;
+	}
+
+	public int getDurability() {
+		return durability;
+	}
 	
 	private void setDurability(int durability) {
 		this.durability = durability;
 		if(durability < 0) {
 			this.durability = 0;
 		}
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public int getMinDamage() {
-		return minDamage;
-	}
-
-
-	public int getMaxDamage() {
-		return maxDamage;
-	}
-
-
-	public int getStamCost() {
-		return stamCost;
-	}
-
-
-	public int getDurability() {
-		return durability;
 	}
 
 	/**
