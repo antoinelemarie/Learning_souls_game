@@ -73,7 +73,7 @@ public abstract class Characters {
 		this.maxLife = maxLife;
 	}
 
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 

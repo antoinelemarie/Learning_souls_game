@@ -11,8 +11,9 @@ import lsg.equipements.Armors;
  * 
  */
 public class Heros extends Characters{
-	Armors armorEquiped[] = new Armors[3];
 	private static final int MAX_ARMOR_PIECES = 3;
+	Armors armorEquiped[] = new Armors[MAX_ARMOR_PIECES];
+	
 	
 	public Heros(){
 		name = "Ynovator";
@@ -56,12 +57,12 @@ public class Heros extends Characters{
 		if (slot > MAX_ARMOR_PIECES || slot < 0 ) {
 			
 			System.out.println(
-					"L'emplacement de pièce d'armure doit correspondre soit a 1 : la tete, soit a 2 : le trorse, soit a 3 : les jambes");
+					"L'emplacement de pièce d'armure doit correspondre soit a 1 : la tete, soit a 2 : le torse, soit a 3 : les jambes");
 			return armorEquiped;
 		}else {
 			
 		armorEquiped[slot] = armor;
-		System.out.println("The piece of armor : " + armor.getName()+" de defense : "+ armor.getArmorValue() + " has been equiped");
+		System.out.println("L'armure : " + armor.getName()+" de defense : "+ armor.getArmorValue() + " a ete equipee");
 		return armorEquiped;
 		
 		}
@@ -70,10 +71,10 @@ public class Heros extends Characters{
 	public float getTotalArmor() {
 		float total = 0;
 
-		for (int i = 0; i < armorEquiped.length; i++) {
-			if (armorEquiped[i] != null) {
-				Armors temp = armorEquiped[i];
-				total += temp.getArmorValue();
+		for (int i = 0; i < armorEquiped.length; i++) { //parcours le tableau
+			if (armorEquiped[i] != null) {		//on vérifie qu'il y a une armure equipee
+				Armors temp = armorEquiped[i];	//on crée un objet temporaire pour accéder aux méthodes de l'objet qui est dans le tableau
+				total += temp.getArmorValue();	//on utilise la méthode getArmorValue qu'on ajoute au total
 			}else {
 				total += 0;
 			}
