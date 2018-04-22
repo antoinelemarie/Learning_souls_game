@@ -6,6 +6,7 @@ import java.util.*;
 
 import lsg.characters.Characters;
 import lsg.characters.Heros;
+import lsg.characters.Lycanthropes;
 import lsg.characters.Monsters;
 import lsg.characters.Pnjs;
 import lsg.characters.Sellers;
@@ -28,6 +29,7 @@ import lsg.weapons.Weapons;
 public class LearningSoulsGame {
 	private Heros hero;
 	private Monsters monster;
+	private Lycanthropes lycan;
 	private Swords sword;
 	private Claws claw;
 	static Armors blackWitchVeil;
@@ -50,14 +52,25 @@ public class LearningSoulsGame {
 		fight1v1(hero, monster);
 	}
 	
+	public void play_v3() {
+		init();
+		hero.setArmorItem(blackWitchVeil, 1);
+		hero.setArmorItem(dragonSlayerLeggings, 3);
+		hero.setArmorItem(ringedKnightArmor, 2);
+
+		fight1v1(hero, lycan);
+	}
+	
 	public void init() {
 		hero = new Heros( 200, 220);
 		sword = new Swords( 10, 20, 2, 210);
 		hero.setArme(sword);
 		
 		monster = new Monsters(100, 200);
+		lycan = new Lycanthropes(120,200);
+		
 		claw = new Claws(15, 30, 2, 210);
-		monster.setArme(claw);
+		this.monster.setArme(claw);
 		
 		blackWitchVeil = new Armors("BlackWitchVeil", 4.6f);
 		ringedKnightArmor = new Armors("RingedKnightArmor", 14.99f);
@@ -76,22 +89,24 @@ public class LearningSoulsGame {
 
 	
 	public String fight1v1(Heros hero, Monsters monster) {
+
+		System.out.println(this.monster.getName()+"---------------------");
 		int dmg=0;
-		refresh(hero, monster);
-		while (!(hero.getLife()==0||monster.getLife()==0)) {
+		refresh(hero, this.monster);
+		while (!(hero.getLife()==0||this.monster.getLife()==0)) {
 			
-			// scan de la touche ici String nextline()
 			scanner.nextLine();
 			dmg = (int) hero.Attack();
-			monster.setLife(monster.getLife() - dmg);
-			System.out.println("try");
+			this.monster.setLife(this.monster.getLife() - dmg);
 			
-			dmg = (int) monster.Attack();
+			
+			dmg = (int) this.monster.Attack();
 			hero.setLife(hero.getLife() - dmg);
-			refresh(hero, monster);
+			refresh(hero, this.monster);
+			System.out.println("--------------------------------------");
 		}
 		
-		String strWin = hero.getLife()==0 ? "Monster" : "Hero";
+		String strWin = hero.getLife()==0 ? this.monster.getName() : "Hero";
 		strWin = strWin+" Wins ! Fatality !";
 		System.out.println(strWin);
 		return strWin = strWin+" Wins ! Fatality !";
@@ -105,9 +120,10 @@ public class LearningSoulsGame {
 		lsg.init();
 		lsg.play_v2();
 		
-//		System.out.println(blackWitchVeil.printStats());
-//		System.out.println(dragonSlayerLeggings.printStats());
-//		System.out.println(ringedKnightArmor.printStats());
+		
+		System.out.println(blackWitchVeil.toString());
+//		System.out.println(dragonSlayerLeggings.toString());
+//		System.out.println(ringedKnightArmor.toString());
 	}
 	
 	

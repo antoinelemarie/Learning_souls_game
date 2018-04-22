@@ -70,7 +70,7 @@ public class Equipements {
 	}
 	
 	/*
-	 * Verifie si l'arme est brisee
+	 * Verifie si l'armure est brisee
 	 * @return boolean si l'arme a 0 ou moins en durabilite
 	 */
 	public boolean isBroken() {
@@ -85,13 +85,15 @@ public class Equipements {
 	@Override
 	public String toString() {
 		String var = "";
-		if(isBroken() == false) {
+		/*if(isBroken() == false) {
 			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s( %f) (usable)", this.getName(),this.getArmorValue());
 		}
 		if(isBroken() == true) {
 			var =String.format("%-20s","["+this.getClass().getSimpleName()+"]")+String.format("%-20s( %f) (broken)", this.getName(),this.getArmorValue());
-		}
+		}	*/
+		var = this.getName()+"("+this.getArmorValue()+")";
 		return var;
+		
 	}
 	
 	public String printStats() {
