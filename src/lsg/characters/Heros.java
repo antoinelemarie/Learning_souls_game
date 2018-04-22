@@ -2,6 +2,7 @@ package lsg.characters;
 
 import java.util.Arrays;
 
+import lsg.buffs.rings.Ring;
 import lsg.equipements.Armors;
 
 /**
@@ -143,6 +144,10 @@ public class Heros extends Characters{
 		// TODO Auto-generated method stub
 		
 		return this.getTotalArmor();
+	}
+	public void setRing(Ring r, int i) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

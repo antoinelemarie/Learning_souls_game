@@ -65,7 +65,7 @@ public abstract class Characters {
 		this.maxStamina = maxStamina;
 	}
 
-	protected Integer getMaxLife() {
+	public Integer getMaxLife() {
 		return maxLife;
 	}
 
