@@ -7,6 +7,8 @@ import lsg.weapons.Weapons;
 
 public abstract class Characters {
 	
+	public final static String LIFE_STATE_STRING 	= "life";
+	public final static String STAMINA_STATE_STRING 	= "stamina";
 	protected String name = null;
 	protected int life;
 	protected double stamina;

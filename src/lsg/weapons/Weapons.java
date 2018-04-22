@@ -1,6 +1,7 @@
 package lsg.weapons;
 
 public class Weapons {
+	public final static String DURABILITY_STATE_STRING = "durability";
 	protected String name;
 	protected int minDamage;
 	protected int maxDamage;

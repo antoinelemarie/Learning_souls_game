@@ -118,7 +118,7 @@ public class LearningSoulsGame {
 		LearningSoulsGame lsg = new LearningSoulsGame();
 		
 		lsg.init();
-		lsg.play_v2();
+		lsg.play_v3();
 		
 		
 		System.out.println(blackWitchVeil.toString());

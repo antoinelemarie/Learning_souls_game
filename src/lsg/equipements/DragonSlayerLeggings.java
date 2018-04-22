@@ -7,7 +7,7 @@ package lsg.equipements;
  * @author antoinelemarie
  *
  */
-public class DragonSlayerLeggings extends Equipements{
+public class DragonSlayerLeggings extends Armors{
 
 	/**
 	 * 
