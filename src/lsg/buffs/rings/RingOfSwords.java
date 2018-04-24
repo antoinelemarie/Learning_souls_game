@@ -3,7 +3,7 @@ package lsg.buffs.rings;
 import lsg.characters.Heros;
 import lsg.weapons.Swords;
 
-public class RingOfSwords extends Ring{
+public class RingOfSwords extends Rings{
 	
 	public RingOfSwords() {
 		super("Ring of Swords", 10) ;

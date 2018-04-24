@@ -2,7 +2,7 @@ package lsg.buffs.rings;
 
 import lsg.equipements.*;
 
-public class DragonSlayerRing extends Ring{
+public class DragonSlayerRing extends Rings{
 	
 	public DragonSlayerRing() {
 		super("Dragon Slayer Ring", 14) ;

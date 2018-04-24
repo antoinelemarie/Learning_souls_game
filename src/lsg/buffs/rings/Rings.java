@@ -3,12 +3,12 @@ package lsg.buffs.rings;
 import lsg.buffs.BuffItem;
 import lsg.characters.Heros;
 
-public abstract class Ring extends BuffItem {
+public abstract class Rings extends BuffItem {
 	
 	protected int power ; 
 	protected Heros hero ; //buff de dégats
 	
-	public Ring(String name, int power) {
+	public Rings(String name, int power) {
 		super(name) ;
 		this.power = power ; 
 	}

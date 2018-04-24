@@ -4,12 +4,12 @@ import java.util.Calendar;
 
 import lsg.buffs.BuffItem;
 
-public class Talisman extends BuffItem {
+public class Talismans extends BuffItem {
 	
 	private float buff ;
 	private int start, end ; 
 	
-	public Talisman(String name, float buff, int start, int end) {
+	public Talismans(String name, float buff, int start, int end) {
 		super(name) ;
 		this.buff = buff ;
 		this.start = start ;

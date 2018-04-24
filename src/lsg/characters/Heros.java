@@ -1,8 +1,9 @@
 package lsg.characters;
 
 import java.util.Arrays;
+import java.util.Locale;
 
-import lsg.buffs.rings.Ring;
+import lsg.buffs.rings.Rings;
 import lsg.equipements.Armors;
 
 /**
@@ -13,7 +14,9 @@ import lsg.equipements.Armors;
  */
 public class Heros extends Characters{
 	private static final int MAX_ARMOR_PIECES = 3;
+	private static final int MAX_RINGS = 2;
 	Armors armorEquiped[] = new Armors[MAX_ARMOR_PIECES];
+	Rings ringEquiped[] = new Rings[MAX_RINGS];
 	
 	
 	public Heros(){
@@ -68,6 +71,9 @@ public class Heros extends Characters{
 		
 		}
 	}
+	
+	
+	
 	
 	public float getTotalArmor() {
 		float total = 0;
@@ -146,9 +152,22 @@ public class Heros extends Characters{
 		
 		return this.getTotalArmor();
 	}
-	public void setRing(Ring r, int i) {
+	public Rings[] setRing(Rings ring, int slot) {
 		// TODO Auto-generated method stub
+		String var;
+		slot = slot-1;
+		if (slot > MAX_RINGS || slot < 0 ) {
+			
+			System.out.println(
+					"L'emplacement de pièce d'armure doit correspondre soit a 1 : la tete, soit a 2 : le torse, soit a 3 : les jambes");
+			return ringEquiped;
+		}else {
+			
+			ringEquiped[slot] = ring;
+			var = String.format(Locale.US, "[%s, %.2f]", ring.getName(), ring.computeBuffValue());
+			System.out.println(var);
+			return ringEquiped;
 		
+		}
 	}
-	
 }

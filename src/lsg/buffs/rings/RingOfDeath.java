@@ -2,7 +2,7 @@ package lsg.buffs.rings;
 
 import lsg.characters.Heros;
 
-public class RingOfDeath extends Ring{
+public class RingOfDeath extends Rings{
 	
 	private static float LIMIT = 0.5f ; 
 
@@ -25,7 +25,7 @@ public class RingOfDeath extends Ring{
 	 */
 	public static void main(String[] args) {
 		Heros hero = new Heros() ;
-		Ring r = new RingOfDeath() ;
+		Rings r = new RingOfDeath() ;
 		hero.setRing(r, 1);
 		hero.GetHitWith(60) ; // pour abaisser les PV du hero
 		System.out.println(r);

@@ -1,9 +1,17 @@
 package lsg.characters;
 
+import java.util.Locale;
+
+import lsg.buffs.rings.Rings;
+import lsg.buffs.talismans.Talismans;
+
 public class Monsters extends Characters{
 	
 	float skinThickness = 20;
 	private static int instances_count = 0;
+	private static final int MAX_TALISMAN = 1;
+	Talismans talismanEquiped[] = new Talismans[MAX_TALISMAN];
+	
 	
 	public float getSkinThickness() {
 		return skinThickness;
@@ -113,5 +121,23 @@ public class Monsters extends Characters{
 		return skinThickness;
 	}
 	
+	public Talismans[] setRing(Talismans talisman, int slot) {
+		// TODO Auto-generated method stub
+		String var;
+		slot = slot-1;
+		if (slot > MAX_TALISMAN || slot < 0 ) {
+			
+			System.out.println(
+					"L'emplacement de pièce d'armure doit correspondre soit a 1 : la tete, soit a 2 : le torse, soit a 3 : les jambes");
+			return talismanEquiped;
+		}else {
+			
+			talismanEquiped[slot] = talisman;
+			var = String.format(Locale.US, "[%s, %.2f]", talisman.getName(), talisman.computeBuffValue());
+			System.out.println(var);
+			return talismanEquiped;
+		
+		}
+	}
 	
 }
