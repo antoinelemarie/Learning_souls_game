@@ -11,6 +11,7 @@ import lsg.characters.Lycanthropes;
 import lsg.characters.Monsters;
 import lsg.characters.Pnjs;
 import lsg.characters.Sellers;
+import lsg.consumable.MenuBestOfV1;
 import lsg.equipements.Armors;
 import lsg.helpers.Dice;
 import lsg.weapons.Axes;
@@ -77,7 +78,7 @@ public class LearningSoulsGame {
 		lycan = new Lycanthropes(120,200);
 		
 		claw = new Claws(15, 30, 2, 210);
-		this.monster.setArme(claw);
+		monster.setArme(claw);
 		
 		blackWitchVeil = new Armors("BlackWitchVeil", 4.6f);
 		ringedKnightArmor = new Armors("RingedKnightArmor", 14.99f);
@@ -128,6 +129,8 @@ public class LearningSoulsGame {
 		LearningSoulsGame lsg = new LearningSoulsGame();
 		
 		lsg.init();
+		MenuBestOfV1 menu = new MenuBestOfV1();
+		menu.toString();
 		//lsg.play_v2();
 		lsg.play_v3();
 		

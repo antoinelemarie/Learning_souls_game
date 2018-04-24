@@ -9,15 +9,15 @@ import lsg.characters.Characters;
  * @author antoinelemarie
  *
  */
-public class Coffe extends Drinks {
+public class Whiskys extends Drinks {
 
 	/**
 	 * 
 	 */
-	public Coffe() {
+	public Whiskys() {
 		// TODO Auto-generated constructor stub
-		String name = "Nespresso";
-		int capacity = 10;
+		String name = "Akashi whisky meisei blended";
+		int capacity = 150;
 		String stat = Characters.STAMINA_STATE_STRING;
 	}
 
@@ -26,7 +26,7 @@ public class Coffe extends Drinks {
 	 * @param capacity
 	 * @param stat
 	 */
-	public Coffe(String name, int capacity, String stat) {
+	public Whiskys(String name, int capacity, String stat) {
 		super(name, capacity, stat);
 		// TODO Auto-generated constructor stub
 	}

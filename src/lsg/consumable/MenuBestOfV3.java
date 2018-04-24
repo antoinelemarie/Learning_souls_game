@@ -21,9 +21,6 @@ public class MenuBestOfV3 extends MenuBestOfV2 {
 	 * @param capacity
 	 * @param stat
 	 */
-	public MenuBestOfV3(String name, int capacity, String stat) {
-		super(name, capacity, stat);
-		// TODO Auto-generated constructor stub
-	}
+	
 
 }
