@@ -41,4 +41,9 @@ public class Pnjs extends Characters{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	@Override
+	public float computeBuffValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
