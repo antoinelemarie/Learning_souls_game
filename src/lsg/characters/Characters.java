@@ -216,10 +216,6 @@ public abstract class Characters {
 			arme.use();
 			this.setStamina(currentStamina-arme.getStamCost());
 			
-			//attack = attack * (1 + computeBuffValue()/100); // application du buff du personnage
-			attack = GetHitWith(attack);
-			System.out.println("********attack : "+attack+"***************");
-			
 			System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 			
 			return attack;
@@ -230,10 +226,11 @@ public abstract class Characters {
 		this.setStamina(currentStamina-arme.getStamCost());
 		arme.use();
 		
+		
+		System.out.println("attack avant buff : "+attack);
 		attack = attack * (1 + computeBuffValue()/100); // application du buff du personnage
-		System.out.println("********attack avant buff : "+attack+"***************");
 		attack = GetHitWith(attack);
-		System.out.println("********attack après : "+attack+"***************");
+		System.out.println("********attack après : "+attack);
 		
 		
 		System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()/*.getClass().getSimpleName()*/+"] dommages causés => "+ attack);

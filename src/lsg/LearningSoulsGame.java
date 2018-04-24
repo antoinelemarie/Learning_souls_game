@@ -81,7 +81,7 @@ public class LearningSoulsGame {
 		blackWitchVeil = new Armors("BlackWitchVeil", 4.6f);
 		ringedKnightArmor = new Armors("RingedKnightArmor", 14.99f);
 		dragonSlayerLeggings = new Armors("DragonSlayerLeggings", 10.2f);
-		ringOfDeath = new Rings("RingOfDeath",10);
+		ringOfDeath = new Rings("RingOfDeath",150);
 		
 		
 	}
@@ -97,23 +97,23 @@ public class LearningSoulsGame {
 	
 	public String fight1v1(Heros hero, Monsters monster) {
 
-		System.out.println(this.monster.getName()+"---------------------");
+		System.out.println(monster.getName()+"---------------------");
 		int dmg=0;
-		refresh(hero, this.monster);
-		while (!(hero.getLife()==0||this.monster.getLife()==0)) {
+		refresh(hero, monster);
+		while (!(hero.getLife()==0||monster.getLife()==0)) {
 			
 			scanner.nextLine();
 			dmg = (int) hero.Attack();
-			this.monster.setLife(this.monster.getLife() - dmg);
+			monster.setLife(monster.getLife() - dmg);
 			
 			
-			dmg = (int) this.monster.Attack();
+			dmg = (int) monster.Attack();
 			hero.setLife(hero.getLife() - dmg);
-			refresh(hero, this.monster);
+			refresh(hero, monster);
 			System.out.println("--------------------------------------");
 		}
 		
-		String strWin = hero.getLife()==0 ? this.monster.getName() : "Hero";
+		String strWin = hero.getLife()==0 ? monster.getName() : "Hero";
 		strWin = strWin+" Wins ! Fatality !";
 		System.out.println(strWin);
 		return strWin = strWin+" Wins ! Fatality !";
