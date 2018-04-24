@@ -6,15 +6,15 @@ import lsg.characters.Heros;
 public abstract class Ring extends BuffItem {
 	
 	protected int power ; 
-	protected Heros hero ;
+	protected Heros hero ; //buff de dégats
 	
 	public Ring(String name, int power) {
 		super(name) ;
-		this.power = power ;
+		this.power = power ; 
 	}
 	
 	public void setHero(Heros hero) {
-		this.hero = hero;
+		this.hero = hero;	//équiper l'anneau au héros
 	}
 	
 	public Heros getHero() {
