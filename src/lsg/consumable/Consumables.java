@@ -83,7 +83,6 @@ public class Consumables {
 
 			var =String.format("%10s [%d %s point(s)] \n", this.getName(),this.getCapacity(),this.getStat());
 		
-		
 		return var;
 	}
 

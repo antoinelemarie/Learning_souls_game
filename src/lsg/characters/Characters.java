@@ -5,6 +5,8 @@ import java.util.Locale;
 import lsg.helpers.Dice;
 import lsg.weapons.Weapons;
 import lsg.buffs.*;
+import lsg.consumable.drinks.*;
+import lsg.consumable.foods.*;
 
 public abstract class Characters {
 	
@@ -276,5 +278,35 @@ public abstract class Characters {
 	
 	abstract public float computeProtection();
 	abstract public float computeBuffValue();
+	
+	private void Drink(Drinks drink) {
+		double capacity = drink.use();
+		String stat = drink.getStat();
+		if (capacity+this.getStamina() > this.getMaxStamina()) {
+			capacity =this.getMaxStamina()-this.getStamina();
+		}
+		System.out.println(this.getName()+" drinks "+ drink.getName()+ " ["+capacity+" stamina points ]");
+		if (this.getMaxStamina()<this.getStamina()+capacity) {
+			this.setStamina(this.getMaxStamina());
+		}else {
+		this.setStamina(this.getStamina()+capacity);
+		}
+		
+	}
+	
+	private void Eat(Foods food) {
+		int capacity = food.use();
+		String stat = food.getStat();
+		if (capacity+this.getLife() > this.getMaxLife()) {
+			capacity = this.getMaxLife()-this.getLife();
+		}
+		System.out.println(this.getName()+" eats "+ food.getName()+ " ["+capacity+" life points ]");
+		if (this.getMaxLife()<this.getLife()+capacity) {
+			this.setLife(this.getMaxLife());
+		}else {
+		this.setLife(this.getLife()+capacity);
+		}
+		
+	}
 	
 }
