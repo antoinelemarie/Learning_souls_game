@@ -63,6 +63,7 @@ public class LearningSoulsGame {
 		hero.setArmorItem(blackWitchVeil, 1);
 		hero.setArmorItem(dragonSlayerLeggings, 3);
 		hero.setArmorItem(ringedKnightArmor, 2);
+		hero.setRing(ringOfDeath, 1);
 
 		fight1v1(hero, lycan);
 	}
@@ -104,11 +105,13 @@ public class LearningSoulsGame {
 			
 			scanner.nextLine();
 			dmg = (int) hero.Attack();
-			monster.setLife(monster.getLife() - dmg);
+			monster.GetHitWith(dmg);
+			//monster.setLife(monster.getLife() - dmg);
 			
 			
 			dmg = (int) monster.Attack();
-			hero.setLife(hero.getLife() - dmg);
+			//hero.setLife(hero.getLife() - dmg);
+			hero.GetHitWith(dmg);
 			refresh(hero, monster);
 			System.out.println("--------------------------------------");
 		}
@@ -125,7 +128,8 @@ public class LearningSoulsGame {
 		LearningSoulsGame lsg = new LearningSoulsGame();
 		
 		lsg.init();
-		lsg.play_v2();
+		//lsg.play_v2();
+		lsg.play_v3();
 		
 //		System.out.println(dragonSlayerLeggings.toString());
 //		System.out.println(ringedKnightArmor.toString());

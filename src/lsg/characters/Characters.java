@@ -229,11 +229,10 @@ public abstract class Characters {
 		
 		System.out.println("attack avant buff : "+attack);
 		attack = attack * (1 + computeBuffValue()/100); // application du buff du personnage
-		attack = GetHitWith(attack);
 		System.out.println("********attack après : "+attack);
 		
 		
-		System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()/*.getClass().getSimpleName()*/+"] dommages causés => "+ attack);
+		System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()/*.getClass().getSimpleName()*/+"]");
 		
 		return attack;
 		
@@ -262,13 +261,15 @@ public abstract class Characters {
 		if (protection == 100) {
 			degats = 0;
 		}else {
-			degats = value*(protection/100);
+			degats = value - value*(protection/100);
 		}
-		degats = (int) ((value >= characterLife)? characterLife : value);
+		degats = (int) ((value >= characterLife)? characterLife : degats);
 		
 		degats = Math.round(degats);
 		characterLife = (float) (characterLife - degats);
 		this.setLife((int) characterLife);
+		
+		System.out.println( "dommages causés => "+ degats);
 		
 		return (float) degats;
 	}
