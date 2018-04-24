@@ -3,7 +3,7 @@ package lsg.buffs.rings;
 import lsg.buffs.BuffItem;
 import lsg.characters.Heros;
 
-public abstract class Rings extends BuffItem {
+public class Rings extends BuffItem {
 	
 	protected int power ; //buff de dégats
 	protected Heros hero ; 
@@ -27,6 +27,12 @@ public abstract class Rings extends BuffItem {
 
 	public void setPower(int power) {
 		this.power = power;
+	}
+
+	@Override
+	public float computeBuffValue() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
