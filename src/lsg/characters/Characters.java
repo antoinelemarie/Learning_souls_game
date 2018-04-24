@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import lsg.helpers.Dice;
 import lsg.weapons.Weapons;
+import lsg.buffs.*;
 
 public abstract class Characters {
 	
@@ -191,6 +192,7 @@ public abstract class Characters {
 		
 		attack = attack *(rand);
 		attack = attack/100;
+
 		
 		/*
 		 * Calcule de la stamina du personnage
@@ -200,6 +202,7 @@ public abstract class Characters {
 			attack = 0;
 			arme.use();
 			this.setStamina(currentStamina-arme.getStamCost());
+			
 			
 			System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 			
@@ -213,6 +216,10 @@ public abstract class Characters {
 			arme.use();
 			this.setStamina(currentStamina-arme.getStamCost());
 			
+			//attack = attack * (1 + computeBuffValue()/100); // application du buff du personnage
+			attack = GetHitWith(attack);
+			System.out.println("********attack : "+attack+"***************");
+			
 			System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()+" dommages causés => "+ attack);
 			
 			return attack;
@@ -222,6 +229,13 @@ public abstract class Characters {
 		attack = attack + arme.getMinDamage();
 		this.setStamina(currentStamina-arme.getStamCost());
 		arme.use();
+		
+		attack = attack * (1 + computeBuffValue()/100); // application du buff du personnage
+		System.out.println("********attack avant buff : "+attack+"***************");
+		attack = GetHitWith(attack);
+		System.out.println("********attack après : "+attack+"***************");
+		
+		
 		System.out.println("**"+this.getName()+" Attaque avec "+arme.printStats()/*.getClass().getSimpleName()*/+"] dommages causés => "+ attack);
 		
 		return attack;
@@ -240,14 +254,12 @@ public abstract class Characters {
 		
 		
 		return characterAttack;
-		//character2.setLife((int) (character2Life - character1Attack));
-
 	}
 	
-	public float GetHitWith(int value) {
+	public float GetHitWith(double value) {
 		
 		float protection = computeProtection();
-		float degats =0;
+		double degats =0;
 		float characterLife = this.getLife();
 		
 		if (protection == 100) {
@@ -258,12 +270,13 @@ public abstract class Characters {
 		degats = (int) ((value >= characterLife)? characterLife : value);
 		
 		degats = Math.round(degats);
-		characterLife = characterLife - degats;
+		characterLife = (float) (characterLife - degats);
 		this.setLife((int) characterLife);
 		
-		return degats;
+		return (float) degats;
 	}
 	
 	abstract public float computeProtection();
+	abstract public float computeBuffValue();
 	
 }

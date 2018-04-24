@@ -73,8 +73,26 @@ public class Heros extends Characters{
 	}
 	
 	
+	@Override
+	public float computeBuffValue() {
+		return this.getTotalBuff();
+	}
 	
 	
+	public float getTotalBuff() {
+		float totalBuff = 0;
+		for (int i = 0; i < ringEquiped.length; i++) { //parcours le tableau
+			if (ringEquiped[i] != null) {		//on vérifie qu'il y a un anneau
+				Rings temp = ringEquiped[i];	//on crée un objet temporaire pour accéder aux méthodes de l'objet qui est dans le tableau
+				totalBuff += temp.getPower();	//on utilise la méthode getPower qu'on ajoute au total
+			}else {
+				totalBuff += 0;
+			}
+			
+		}
+		return totalBuff;
+	}
+
 	public float getTotalArmor() {
 		float total = 0;
 
@@ -159,7 +177,7 @@ public class Heros extends Characters{
 		if (slot > MAX_RINGS || slot < 0 ) {
 			
 			System.out.println(
-					"L'emplacement de pièce d'armure doit correspondre soit a 1 : la tete, soit a 2 : le torse, soit a 3 : les jambes");
+					"L'emplacement d'anneau doit correspondre soit a 1 : la main droite, soit a 2 : la main gauche");
 			return ringEquiped;
 		}else {
 			
@@ -170,4 +188,5 @@ public class Heros extends Characters{
 		
 		}
 	}
+	
 }

@@ -19,6 +19,25 @@ public class Monsters extends Characters{
 	public void setSkinThickness(int skinThickness) {
 		this.skinThickness = skinThickness;
 	}
+	@Override
+	public float computeBuffValue() {
+		return this.getTotalBuff();
+	}
+	
+	
+	public float getTotalBuff() {
+		float totalBuff = 0;
+		/*for (int i = 0; i < ringEquiped.length; i++) { //parcours le tableau
+			if (ringEquiped[i] != null) {		//on vérifie qu'il y a un anneau
+				Rings temp = ringEquiped[i];	//on crée un objet temporaire pour accéder aux méthodes de l'objet qui est dans le tableau
+				totalBuff += temp.getPower();	//on utilise la méthode getPower qu'on ajoute au total
+			}else {
+				totalBuff += 0;
+			}
+			
+		}*/
+		return totalBuff;
+	}
 	/**
 	 * @author antoinelemarie
 	 * 

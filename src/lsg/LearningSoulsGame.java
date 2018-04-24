@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.*;
 
+import lsg.buffs.rings.Rings;
 import lsg.characters.Characters;
 import lsg.characters.Heros;
 import lsg.characters.Lycanthropes;
@@ -19,6 +20,8 @@ import lsg.weapons.Mass;
 import lsg.weapons.Spears;
 import lsg.weapons.Swords;
 import lsg.weapons.Weapons;
+import lsg.buffs.BuffItem;
+import lsg.buffs.rings.*;
 
 /**
  * @author antoinelemarie
@@ -35,6 +38,7 @@ public class LearningSoulsGame {
 	static Armors blackWitchVeil;
 	static Armors ringedKnightArmor;
 	static Armors dragonSlayerLeggings;
+	static Rings ringOfDeath;
 	
 	Scanner scanner = new Scanner(System.in);
 	
@@ -47,8 +51,10 @@ public class LearningSoulsGame {
 	public void play_v2() {
 		init();
 		hero.setArmorItem(blackWitchVeil, 1);
-		hero.setArmorItem(dragonSlayerLeggings, 3);
 		hero.setArmorItem(ringedKnightArmor, 2);
+		hero.setArmorItem(dragonSlayerLeggings, 3);
+		hero.setRing(ringOfDeath, 1);
+		
 		fight1v1(hero, monster);
 	}
 	
@@ -75,6 +81,7 @@ public class LearningSoulsGame {
 		blackWitchVeil = new Armors("BlackWitchVeil", 4.6f);
 		ringedKnightArmor = new Armors("RingedKnightArmor", 14.99f);
 		dragonSlayerLeggings = new Armors("DragonSlayerLeggings", 10.2f);
+		ringOfDeath = new Rings("RingOfDeath",10);
 		
 		
 	}
@@ -118,10 +125,8 @@ public class LearningSoulsGame {
 		LearningSoulsGame lsg = new LearningSoulsGame();
 		
 		lsg.init();
-		lsg.play_v3();
+		lsg.play_v2();
 		
-		
-		System.out.println(blackWitchVeil.toString());
 //		System.out.println(dragonSlayerLeggings.toString());
 //		System.out.println(ringedKnightArmor.toString());
 	}
