@@ -40,3 +40,17 @@ package, on dois modifier la visibilité de isAlive à protected pour que le mai
  implémenter dans les sous-classes de characters.
  
  
+ /*
+ * Fin TP3
+ */
+
+--------------------------------------------------------------
+ 
+ /*
+  * Debut TP4
+  */
+  
+ 3.3) Si la préocupation première est la performance il est conseillé de ne pas set la capacité initial.
+  
+ 
+ 
