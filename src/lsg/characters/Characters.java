@@ -5,6 +5,7 @@ import java.util.Locale;
 import lsg.helpers.Dice;
 import lsg.weapons.Weapons;
 import lsg.buffs.*;
+import lsg.consumable.Consumables;
 import lsg.consumable.drinks.*;
 import lsg.consumable.foods.*;
 
@@ -308,5 +309,22 @@ public abstract class Characters {
 		}
 		
 	}
+	
+	public void use(Consumables consumable) {
+		
+		if (consumable instanceof Drinks) {
+			Drink((Drinks) consumable);
+		}else if (consumable instanceof Foods) {
+			Eat((Foods) consumable);
+		}
+		
+	}
+	
+	public void createExhaustedHero() {
+		Heros heroEpuise = new Heros();
+		Weapons grosseArme = new Weapons("Grosse Arme", 0, 0, 100000, 100);
+		heroEpuise.GetHitWith(99);
+	}
+	
 	
 }
