@@ -202,7 +202,7 @@ public abstract class Characters {
 	public void equip(Consumables conso) {
 		if(this.Cbag.contains(conso)) {
 			this.Cbag.pop(conso);
-			this.setArme(conso);
+			this.use(conso);
 		}
 		System.out.println(this.getName()+" pulls out and equip/use "+conso.toString());
 	}

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Locale;
 
 import lsg.buffs.rings.Rings;
+import lsg.consumable.Consumables;
 import lsg.equipements.Armors;
 
 /**
@@ -184,6 +185,21 @@ public class Heros extends Characters{
 			return ringEquiped;
 		
 		}
+	}
+	public void equip(Rings ring, int slot) {
+		if(this.Cbag.contains(ring)) {
+			this.Cbag.pop(ring);
+			this.setRing(ring, slot);
+		}
+		System.out.println(this.getName()+" pulls out and equip/use "+ring.toString());
+	}
+	
+	public void equip(Armors armor, int slot) {
+		if(this.Cbag.contains(armor)) {
+			this.Cbag.pop(armor);
+			this.setArmorItem(armor, slot);
+		}
+		System.out.println(this.getName()+" pulls out and equip/use "+armor.toString());
 	}
 	
 }
