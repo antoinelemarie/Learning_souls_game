@@ -60,7 +60,7 @@ public class Bags {
 		return items.contains(item); //methode de HashSet qui renvoie un boolean si l'item est dans le Hash
 	}
 	
-	 public Object[] getItems() {
+	 public Collectibles[] getItems() {
 		 // retourne un tableau contenant les items du sac
 		 
 		 return items.toArray();

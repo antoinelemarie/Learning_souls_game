@@ -10,6 +10,7 @@ import lsg.bags.SmallBags;
 import lsg.buffs.*;
 import lsg.consumable.Consumables;
 import lsg.consumable.MenuBestOfV4;
+import lsg.consumable.RepairKits;
 import lsg.consumable.drinks.*;
 import lsg.consumable.foods.*;
 
@@ -136,6 +137,12 @@ public abstract class Characters {
 	/*
 	 * methode pour voir si le personnage est en vie
 	 */
+	
+	private void fastUseFirst(Consumables type) {
+		type.
+		
+	}
+	
 	public boolean isAlive() {
 		
 		boolean alive = true;
@@ -380,6 +387,36 @@ public abstract class Characters {
 			Drink((Drinks) consumable);
 		}else if (consumable instanceof Foods) {
 			Eat((Foods) consumable);
+		}
+		
+	}
+	
+	public Drinks fastDrink() {
+		for(int i =0; i< this.Cbag.getItems().length;i++) {
+			Drinks temp = this.Cbag.getItems()[i];
+			if(temp == Drinks.class) {
+				this.use(this.Cbag.getItems()[i]);
+			}
+		}
+		
+	}
+	
+	public Foods fastEat() {
+		for(int i =0; i< this.Cbag.getItems().length;i++) {
+			Foods temp = this.Cbag.getItems()[i];
+			if(temp == Foods.class) {
+				this.use(this.Cbag.getItems()[i]);
+			}
+		}
+		
+	}
+	
+	public RepairKits fastRepair() {
+		for(int i =0; i< this.Cbag.getItems().length;i++) {
+			RepairKits temp = this.Cbag.getItems()[i];
+			if(temp == RepairKits.class) {
+				this.use(this.Cbag.getItems()[i]);
+			}
 		}
 		
 	}

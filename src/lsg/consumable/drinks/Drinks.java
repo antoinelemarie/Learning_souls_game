@@ -3,13 +3,14 @@
  */
 package lsg.consumable.drinks;
 
+import lsg.bags.Collectibles;
 import lsg.consumable.Consumables;
 
 /**
  * @author antoinelemarie
  *
  */
-public class Drinks extends Consumables {
+public class Drinks extends Consumables implements Collectibles{
 
 	/**
 	 * 
