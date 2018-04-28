@@ -18,6 +18,12 @@ public class Consumables implements Collectibles{
 	protected String name;
 	protected int capacity;
 	protected String stat;
+	
+	public void setConsumable(String name, int Capacity, String stat) {
+		this.name = name;
+		this.capacity = capacity;
+		this.stat = stat;
+	}
 	/**
 	 * @return the name
 	 */
