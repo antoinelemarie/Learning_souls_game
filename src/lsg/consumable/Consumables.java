@@ -3,11 +3,13 @@
  */
 package lsg.consumable;
 
+import lsg.bags.Collectibles;
+
 /**
  * @author antoinelemarie
  *
  */
-public class Consumables {
+public class Consumables implements Collectibles{
 
 	/**
 	 * 
@@ -84,6 +86,11 @@ public class Consumables {
 			var =String.format("%10s [%d %s point(s)] \n", this.getName(),this.getCapacity(),this.getStat());
 		
 		return var;
+	}
+
+	@Override
+	public int getWeight() {
+		return 1;//kg
 	}
 
 }

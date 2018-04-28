@@ -21,6 +21,9 @@ import lsg.weapons.Mass;
 import lsg.weapons.Spears;
 import lsg.weapons.Swords;
 import lsg.weapons.Weapons;
+import lsg.bags.Bags;
+import lsg.bags.MediumBags;
+import lsg.bags.SmallBags;
 import lsg.buffs.BuffItem;
 import lsg.buffs.rings.*;
 
@@ -128,13 +131,24 @@ public class LearningSoulsGame {
 	public static void main(String[] args) {
 		LearningSoulsGame lsg = new LearningSoulsGame();
 		Heros ch = new Heros();
+		Bags mediumBag = new MediumBags();
 		lsg.init();
+		
+		mediumBag.push(blackWitchVeil);
+		mediumBag.push(ringOfDeath);
+		
+		System.out.println(mediumBag.toString());
+		
+		mediumBag.pop(blackWitchVeil);
+		
+		System.out.println(mediumBag.toString());
+		
+		
 		MenuBestOfV1 menu = new MenuBestOfV1();
 		menu.toString();
 		//lsg.play_v2();
 		lsg.play_v3();
 		ch.createExhaustedHero();
-		
 		
 //		System.out.println(dragonSlayerLeggings.toString());
 //		System.out.println(ringedKnightArmor.toString());
