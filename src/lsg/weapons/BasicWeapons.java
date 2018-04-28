@@ -3,11 +3,13 @@
  */
 package lsg.weapons;
 
+import lsg.bags.Collectibles;
+
 /**
  * @author antoinelemarie
  *
  */
-public class BasicWeapons extends Weapons {
+public class BasicWeapons extends Weapons implements Collectibles{
 
 	/**
 	 * 
@@ -73,5 +75,10 @@ public class BasicWeapons extends Weapons {
 		this.durability = durability;
 		this.maxDamage = maxDamage;
 		this.minDamage = minDamage;
+	}
+
+	@Override
+	public int getWeight() {
+		return 2; //kg
 	}
 }
