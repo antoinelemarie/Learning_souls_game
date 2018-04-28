@@ -146,11 +146,11 @@ public class LearningSoulsGame {
 		System.out.println(mediumBag.toString());
 		
 		
-		MenuBestOfV1 menu = new MenuBestOfV1();
-		menu.toString();
+		//MenuBestOfV1 menu = new MenuBestOfV1();
+		//menu.toString();
 		//lsg.play_v2();
-		lsg.play_v3();
-		ch.createExhaustedHero();
+		//lsg.play_v3();
+		//ch.createExhaustedHero();
 		
 //		System.out.println(dragonSlayerLeggings.toString());
 //		System.out.println(ringedKnightArmor.toString());
