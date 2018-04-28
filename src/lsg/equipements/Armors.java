@@ -3,11 +3,13 @@
  */
 package lsg.equipements;
 
+import lsg.bags.Collectibles;
+
 /**
  * @author antoinelemarie
  *
  */
-public class Armors extends Equipements {
+public class Armors extends Equipements implements Collectibles{
 
 	/**
 	 * default constructor
@@ -40,6 +42,11 @@ public class Armors extends Equipements {
 		this.armorValue = armorValue;
 		this.durability = durability;
 		this.maxDurability = maxDurability;
+	}
+
+	@Override
+	public int getWeight() {
+		return 4;//kg
 	}
 
 }
