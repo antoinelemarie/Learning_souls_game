@@ -6,6 +6,7 @@ import lsg.helpers.Dice;
 import lsg.weapons.Weapons;
 import lsg.buffs.*;
 import lsg.consumable.Consumables;
+import lsg.consumable.MenuBestOfV4;
 import lsg.consumable.drinks.*;
 import lsg.consumable.foods.*;
 
@@ -323,8 +324,16 @@ public abstract class Characters {
 	public void createExhaustedHero() {
 		Heros heroEpuise = new Heros();
 		Weapons grosseArme = new Weapons("Grosse Arme", 0, 0, 100000, 100);
+		heroEpuise.setArme(grosseArme);
 		heroEpuise.GetHitWith(99);
 	}
 	
+	public void aTable() {
+		MenuBestOfV4 menu = new MenuBestOfV4();
+		
+		for (Consumables consumables : menu) {
+			consumables.use();
+		}
+	}
 	
 }

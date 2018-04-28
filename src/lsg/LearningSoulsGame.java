@@ -127,12 +127,14 @@ public class LearningSoulsGame {
 	
 	public static void main(String[] args) {
 		LearningSoulsGame lsg = new LearningSoulsGame();
-		
+		Heros ch = new Heros();
 		lsg.init();
 		MenuBestOfV1 menu = new MenuBestOfV1();
 		menu.toString();
 		//lsg.play_v2();
 		lsg.play_v3();
+		ch.createExhaustedHero();
+		
 		
 //		System.out.println(dragonSlayerLeggings.toString());
 //		System.out.println(ringedKnightArmor.toString());

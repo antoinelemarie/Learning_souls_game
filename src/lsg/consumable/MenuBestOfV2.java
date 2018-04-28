@@ -18,7 +18,14 @@ import lsg.consumable.foods.*;
 
 	    private HashSet<Consumables> menu = new HashSet<Consumables>();
 
-	    public MenuBestOfV2() {
+	    /**
+		 * @param menu the menu to set
+		 */
+		public void setMenu(HashSet<Consumables> menu) {
+			this.menu = menu;
+		}
+
+		public MenuBestOfV2() {
 
 	        this.menu.add(new Hamburgers());
 	        this.menu.add(new Wines());

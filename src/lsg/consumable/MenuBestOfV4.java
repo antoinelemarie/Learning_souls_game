@@ -4,6 +4,7 @@
 package lsg.consumable;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 import lsg.consumable.drinks.*;
 import lsg.consumable.foods.*;
@@ -13,19 +14,19 @@ import lsg.consumable.foods.*;
  *
  */
 
-	public class MenuBestOfV3 extends HashSet<Consumables> {
+	public class MenuBestOfV4 extends LinkedHashSet<Consumables> {
 
 
-	    private HashSet<Consumables> menu = new HashSet<Consumables>();
+	    private LinkedHashSet<Consumables> menu = new LinkedHashSet<Consumables>();
 
 	    /**
 		 * @param menu the menu to set
 		 */
-		public void setMenu(HashSet<Consumables> menu) {
+		public void setMenu(LinkedHashSet<Consumables> menu) {
 			this.menu = menu;
 		}
 
-		public MenuBestOfV3() {
+		public MenuBestOfV4() {
 
 	        this.menu.add(new Hamburgers());
 	        this.menu.add(new Wines());

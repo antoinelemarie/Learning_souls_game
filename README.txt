@@ -50,7 +50,9 @@ package, on dois modifier la visibilité de isAlive à protected pour que le mai
   * Debut TP4
   */
   
- 3.3) Si la préocupation première est la performance il est conseillé de ne pas set la capacité initial.
+ 3.3) HashSet a une itération aléatoire, le contenu resortira toujours de manière aléatoire.
+ 
+ 3.4) Contrairement au HashSet, le LinkedHashSet n'a pas une itération alétoire.
   
  
  
