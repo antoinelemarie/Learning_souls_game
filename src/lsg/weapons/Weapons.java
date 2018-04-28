@@ -1,6 +1,8 @@
 package lsg.weapons;
 
-public class Weapons {
+import lsg.bags.Collectibles;
+
+public class Weapons implements Collectibles{
 	public final static String DURABILITY_STATE_STRING = "durability";
 	protected String name;
 	protected int minDamage;
@@ -168,5 +170,12 @@ public class Weapons {
 	public String printStats() {
 		return this.toString();
 		
+	}
+
+
+	@Override
+	public int getWeight() {
+		// TODO Auto-generated method stub
+		return 2;//kg
 	}
 }

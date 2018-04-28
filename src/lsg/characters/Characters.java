@@ -4,6 +4,9 @@ import java.util.Locale;
 
 import lsg.helpers.Dice;
 import lsg.weapons.Weapons;
+import lsg.bags.Bags;
+import lsg.bags.Collectibles;
+import lsg.bags.SmallBags;
 import lsg.buffs.*;
 import lsg.consumable.Consumables;
 import lsg.consumable.MenuBestOfV4;
@@ -24,6 +27,7 @@ public abstract class Characters {
 	protected int money;
 	public static Dice precision;
 	public Weapons arme;
+	public Bags Cbag;
 	/**
 	 * @author antoinelemarie
 	 * 
@@ -127,6 +131,7 @@ public abstract class Characters {
 		stamina = 25;
 		maxStamina = 500;
 		this.setName(name);
+		Cbag = new SmallBags();
 	}
 	/*
 	 * methode pour voir si le personnage est en vie
@@ -143,6 +148,64 @@ public abstract class Characters {
 		return alive;
 	}
 	
+	public void pickUp(Collectibles item) {
+		
+		if (item.getWeight() > this.Cbag.getCapacity() - this.Cbag.getWeight()) {
+			System.out.println("Pas assez de place dans le sac");
+		}
+		else {
+			this.Cbag.push(item);
+			System.out.println(this.getName()+" picks up "+item.toString());
+		}
+	}
+	
+	public void pullOut(Collectibles item) {
+		
+		if(this.Cbag.contains(item)) {
+			this.Cbag.pop(item);
+			System.out.println(this.getName()+" pulls out "+item.toString());
+		}
+		
+	}
+	
+	public void printBag (Collectibles item) {
+		System.out.println(this.Cbag.toString());
+	}
+	
+	public int getBagCapacity(){
+		return this.Cbag.getCapacity();
+	}
+	
+	public int getBagWeight(){
+		return this.Cbag.getWeight();
+	}
+	
+	public Object[] getBagItems(){
+		return this.Cbag.getItems();
+	}
+	
+	public Bags setBag(Bags intoBag) {
+		this.Cbag.transfer(this.Cbag, intoBag);
+		System.out.println(this.getName()+" changes "+this.Cbag.toString()+" For "+ intoBag.toString());
+		this.Cbag = intoBag;
+		return this.Cbag;
+	}
+	
+	public void equip(Weapons weapon) {
+		if(this.Cbag.contains(weapon)) {
+			this.Cbag.pop(weapon);
+			this.setArme(weapon);
+		}
+		System.out.println(this.getName()+" pulls out and equip "+weapon.toString());
+	}
+	
+	public void equip(Consumables conso) {
+		if(this.Cbag.contains(conso)) {
+			this.Cbag.pop(conso);
+			this.setArme(conso);
+		}
+		System.out.println(this.getName()+" pulls out and equip/use "+conso.toString());
+	}
 
 	@Override
 	public String toString() {

@@ -91,12 +91,14 @@ public class LearningSoulsGame {
 		
 	}
 	
-	public void refresh(Heros hero, Monsters monster) {
+	public void testBag(){
 		
+	}
+	
+	public void refresh(Heros hero, Monsters monster) {
 		System.out.println("Tour Suivant");
 		System.out.println(hero.printStats());
 		System.out.println(monster.printStats());
-		
 	}
 
 	
@@ -127,7 +129,7 @@ public class LearningSoulsGame {
 		
 	}
 	
-	
+	// ****************** MAIN **********************
 	public static void main(String[] args) {
 		LearningSoulsGame lsg = new LearningSoulsGame();
 		Heros ch = new Heros();
