@@ -119,14 +119,11 @@ public class Heros extends Characters{
 			if (armorEquiped[i] == null) {
 				
 				var +=String.format("%10d : empty",i+1);
-				
 			}else {
-			
 				Armors temp = armorEquiped[i];
 				var +=String.format("%10d : %s ( %f )",i+1, temp.getName(),temp.getArmorValue());
 			}
 		}
-		
 //		return Arrays.toString(armorEquiped)+" TOTAL : "+total;
 		System.out.println(var+"     TOTAL : "+total);
 		
