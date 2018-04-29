@@ -194,6 +194,10 @@ public class Heros extends Characters{
 		System.out.println(this.getName()+" pulls out and equip/use "+ring.toString());
 	}
 	
+	public void printRing(Rings ring) {
+		System.out.println(ring.toString());
+	}
+	
 	public void equip(Armors armor, int slot) {
 		if(this.Cbag.contains(armor)) {
 			this.Cbag.pop(armor);
