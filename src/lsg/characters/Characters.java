@@ -400,31 +400,34 @@ public abstract class Characters {
 	
 	public Drinks fastDrink() {
 		for(int i =0; i< this.Cbag.getItems().length;i++) {
-			Drinks temp = this.Cbag.getItems()[i];
-			if(temp == Drinks.class) {
-				this.use(this.Cbag.getItems()[i]);
+			Drinks temp = (Drinks) this.Cbag.getItems()[i];
+			if(temp instanceof Drinks) {
+				this.use((Consumables) this.Cbag.getItems()[i]);
 			}
 		}
+		return null;
 		
 	}
 	
 	public Foods fastEat() {
 		for(int i =0; i< this.Cbag.getItems().length;i++) {
-			Foods temp = this.Cbag.getItems()[i];
-			if(temp == Foods.class) {
-				this.use(this.Cbag.getItems()[i]);
+			Foods temp = (Foods) this.Cbag.getItems()[i];
+			if(temp instanceof Foods) {
+				this.use((Consumables) this.Cbag.getItems()[i]);
 			}
 		}
+		return null;
 		
 	}
 	
 	public RepairKits fastRepair() {
 		for(int i =0; i< this.Cbag.getItems().length;i++) {
-			RepairKits temp = this.Cbag.getItems()[i];
-			if(temp == RepairKits.class) {
-				this.use(this.Cbag.getItems()[i]);
+			RepairKits temp = (RepairKits) this.Cbag.getItems()[i];
+			if(temp instanceof RepairKits) {
+				this.use((Consumables) this.Cbag.getItems()[i]);
 			}
 		}
+		return null;
 		
 	}
 	
