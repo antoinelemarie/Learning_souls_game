@@ -63,7 +63,7 @@ public class Bags {
 	 public Collectibles[] getItems() {
 		 // retourne un tableau contenant les items du sac
 		 
-		 return items.toArray();
+		 return (Collectibles[]) items.toArray();
 	 }
 	 
 	 public String toString() {

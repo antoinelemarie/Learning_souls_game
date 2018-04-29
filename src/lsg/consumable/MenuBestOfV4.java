@@ -8,6 +8,7 @@ import java.util.LinkedHashSet;
 
 import lsg.consumable.drinks.*;
 import lsg.consumable.foods.*;
+import lsg.consumable.repairs.RepairKits;
 
 /**
  * @author antoinelemarie
@@ -33,6 +34,7 @@ import lsg.consumable.foods.*;
 	        this.menu.add(new Americains());
 	        this.menu.add(new Coffes());
 	        this.menu.add(new Whiskys());
+	        this.menu.add(new RepairKits());
 
 	    }
 

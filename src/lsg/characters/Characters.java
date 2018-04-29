@@ -10,7 +10,7 @@ import lsg.bags.SmallBags;
 import lsg.buffs.*;
 import lsg.consumable.Consumables;
 import lsg.consumable.MenuBestOfV4;
-import lsg.consumable.RepairKits;
+import lsg.consumable.repairs.RepairKits;
 import lsg.consumable.drinks.*;
 import lsg.consumable.foods.*;
 
@@ -138,10 +138,7 @@ public abstract class Characters {
 	 * methode pour voir si le personnage est en vie
 	 */
 	
-	private void fastUseFirst(Consumables type) {
-		type.
-		
-	}
+	
 	
 	public boolean isAlive() {
 		
@@ -353,7 +350,6 @@ public abstract class Characters {
 	
 	private void Drink(Drinks drink) {
 		double capacity = drink.use();
-		String stat = drink.getStat();
 		if (capacity+this.getStamina() > this.getMaxStamina()) {
 			capacity =this.getMaxStamina()-this.getStamina();
 		}
@@ -368,7 +364,6 @@ public abstract class Characters {
 	
 	private void Eat(Foods food) {
 		int capacity = food.use();
-		String stat = food.getStat();
 		if (capacity+this.getLife() > this.getMaxLife()) {
 			capacity = this.getMaxLife()-this.getLife();
 		}
@@ -381,12 +376,20 @@ public abstract class Characters {
 		
 	}
 	
+	private void RepairWeaponWith(RepairKits kit) {
+		arme = this.getArme();
+		arme.repairWith(kit);
+		System.out.println(this.getName()+ "repairs"+ arme.getName()+ arme.printStats()+ "with" + kit.toString());
+	}
+	
 	public void use(Consumables consumable) {
 		
 		if (consumable instanceof Drinks) {
 			Drink((Drinks) consumable);
 		}else if (consumable instanceof Foods) {
 			Eat((Foods) consumable);
+		}else if(consumable instanceof RepairKits) {
+			RepairWeaponWith((RepairKits) consumable);
 		}
 		
 	}
@@ -420,6 +423,9 @@ public abstract class Characters {
 		}
 		
 	}
+	
+		
+	
 	
 	public void createExhaustedHero() {
 		Heros heroEpuise = new Heros();

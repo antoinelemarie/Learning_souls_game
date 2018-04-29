@@ -1,6 +1,8 @@
 package lsg.weapons;
 
 import lsg.bags.Collectibles;
+import lsg.consumable.foods.Foods;
+import lsg.consumable.repairs.RepairKits;
 
 public class Weapons implements Collectibles{
 	public final static String DURABILITY_STATE_STRING = "durability";
@@ -177,5 +179,17 @@ public class Weapons implements Collectibles{
 	public int getWeight() {
 		// TODO Auto-generated method stub
 		return 2;//kg
+	}
+	
+	public void repairWith(RepairKits kit) {
+		int capacity = kit.use();
+		
+		System.out.println(this.getName()+" repaired with "+ kit.getName()+ " ["+capacity+" durabylity points ]");
+		if (this.getMaxDurability()<this.getDurability()+capacity) {
+			this.setDurability(this.getMaxDurability());
+		}else {
+		this.setDurability(this.getDurability()+capacity);
+		}
+		
 	}
 }
