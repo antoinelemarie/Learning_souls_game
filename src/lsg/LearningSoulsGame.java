@@ -91,10 +91,6 @@ public class LearningSoulsGame {
 		
 	}
 	
-	public void testBag(){
-		
-	}
-	
 	public void refresh(Heros hero, Monsters monster) {
 		System.out.println("Tour Suivant");
 		System.out.println(hero.printStats());
@@ -132,28 +128,10 @@ public class LearningSoulsGame {
 	// ****************** MAIN **********************
 	public static void main(String[] args) {
 		LearningSoulsGame lsg = new LearningSoulsGame();
-		Heros ch = new Heros();
-		Bags mediumBag = new MediumBags();
+		
 		lsg.init();
 		
-		mediumBag.push(blackWitchVeil);
-		mediumBag.push(ringOfDeath);
 		
-		System.out.println(mediumBag.toString());
-		
-		mediumBag.pop(blackWitchVeil);
-		
-		System.out.println(mediumBag.toString());
-		
-		
-		//MenuBestOfV1 menu = new MenuBestOfV1();
-		//menu.toString();
-		//lsg.play_v2();
-		//lsg.play_v3();
-		//ch.createExhaustedHero();
-		
-//		System.out.println(dragonSlayerLeggings.toString());
-//		System.out.println(ringedKnightArmor.toString());
 	}
 	
 	

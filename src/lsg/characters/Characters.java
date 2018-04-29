@@ -172,6 +172,10 @@ public abstract class Characters {
 		
 	}
 	
+	public void printConsumable(Consumables conso) {
+		System.out.println(conso.toString());
+	}
+	
 	public void printBag (Collectibles item) {
 		System.out.println(this.Cbag.toString());
 	}
@@ -434,12 +438,5 @@ public abstract class Characters {
 		heroEpuise.GetHitWith(99);
 	}
 	
-	public void aTable() {
-		MenuBestOfV4 menu = new MenuBestOfV4();
-		
-		for (Consumables consumables : menu) {
-			consumables.use();
-		}
-	}
 	
 }
